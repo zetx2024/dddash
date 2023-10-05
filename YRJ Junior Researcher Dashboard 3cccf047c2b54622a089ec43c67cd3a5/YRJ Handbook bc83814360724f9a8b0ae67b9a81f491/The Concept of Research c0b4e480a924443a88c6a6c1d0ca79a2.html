@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Concept of Research</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c0b4e480-a924-443a-88c6-a6c1d0ca79a2" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 25.11%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔍</span></div><h1 class="page-title">The Concept of Research</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6805d86e-9ad3-467f-82cd-a466a613a2a7"><div style="font-size:1.5em"><span class="icon">👏</span></div><div style="width:100%">Congratulations on getting into YRJ – I know it has been a tough journey. Now, since you are a YRJer, you are required to make a research paper. I actually get your question of what does this mean? But, wait, do you really need to make a research paper or another type of paper, e.g., a research proposal or literature review? You know, there is even a further “wait”, what does research even mean? Through this guide, you will understand what research truly means and why it is important.</div></figure><p id="ecd8831a-dad6-446c-82c8-ca7185417ca3" class="">
+</p><p id="e4e150c9-b33c-446d-b425-ba3fb46b3080" class="">For someone who genuinely loves research, just like us, it represents progress in human history. It lies deep at the heart of innovation and knowledge advancement. It is a quest for understanding, a journey of exploration that seeks to uncover new insights, solve problems, and contribute to the body of knowledge. One main purpose of research is to fill the wide gap between what we know and what we don’t. It’s the vehicle we ride to acquire knowledge and add to academic disciplines.</p><h2 id="e8258510-aa2d-4f92-add1-4cb3d88b325b" class=""><mark class="highlight-orange">Characteristics of Research</mark></h2><p id="549cc44f-ae7a-4b73-8c7a-f039dad1810e" class="">Before getting into how one can be involved in the process, let us take a look at the main characteristics of research. Research is characterized by some particular attributes that set it apart from casual observation or anecdotal information. Those characteristics ensure that research is done in a systematic, objective, and rigorous manner.<div class="indented"><h3 id="516354e8-ca5e-4c87-a2ae-42916955cc04" class=""><mark class="highlight-yellow"><em>I. Systematic Nature</em></mark></h3><p id="86ed09f5-968b-430f-8924-8721ee620657" class="">Without mentioning so much detail here, research follows a structured and organized process that involves clearly defined steps and procedures. It begins with the identification of a research question or objective, followed by the formulation of a research plan, data collection, analysis, interpretation, and finally, the dissemination of findings. This systematic approach ensures that research is conducted methodically and logically, enhancing the reliability of results.</p><h3 id="dd01b234-cc7b-4465-a91d-f497ead1208e" class=""><mark class="highlight-yellow"><em>II. Objectivity</em></mark></h3><p id="7945cdb2-e7e7-4805-b6f5-28ce52e6de95" class="">In simple words, research has so much integrity in itself. Researchers always aim to approach their investigations without any personal biases or preconceived notions. They aim to gather and analyze data objectively, allowing the evidence, along with nothing else, to guide their conclusions.</p><h3 id="7104d50b-1150-4af1-b839-aca4e381980c" class=""><mark class="highlight-yellow"><em>III. Generation of New Knowledge</em></mark></h3><p id="15a5d8c6-fbd4-4e2f-a5ce-fa721483bc8f" class="">It aims to contribute to the existing body of knowledge by uncovering new insights, theories, or applications. Through their investigations, researchers seek to advance understanding, pushing the boundaries of knowledge.</p><h3 id="54ac15d3-fcaf-4c80-9f24-4685f3fdadf0" class=""><mark class="highlight-yellow"><em>IV. Cumulative Nature of Research</em></mark></h3><p id="a967caf1-5f69-4f56-98f7-cd66718281f4" class="">It builds upon existing knowledge and is often conducted within the context of previous studies. By building upon previous research, researchers can establish continuity, draw comparisons, and identify areas that require further exploration.</p></div></p><h2 id="3a876283-2c18-45f1-ae05-6b0e9e9fc11e" class=""><mark class="highlight-orange">Types of Research:</mark></h2><p id="d6a0cc3f-ae0b-452f-b10c-5b0c89fd1c43" class="">Now, do you remember our first talk, yes, the one where you are supposed to write a research paper? You asked a very solid question, should I write a research paper or another type of paper? Well, in YRJ, you can write whatever you can since it is accessible, relevant, and ethical. So, what are the different types of research?<div class="indented"><h3 id="98f020ef-2f8d-4e46-a42e-5aa15b8f71ee" class=""><mark class="highlight-yellow"><em>I. Experimental Research</em></mark></h3><p id="a3b3dd08-da16-4484-96c3-be82effcadd1" class="">It is where researchers manipulate variables and observe their effects to establish cause-and-effect relationships. Experimental research often involves statistical analysis to draw conclusions. Although this type of research is used in almost every field, it is more common in physics, biology, and chemistry.</p><h3 id="e7813a85-4dd2-4537-b381-102e47743645" class=""><mark class="highlight-yellow"><em>II. Observational Research</em></mark></h3><p id="51093968-c9d7-40a0-9427-42031f0a062c" class="">It is where researchers observe and document phenomena without intervening or manipulating variables. Observational research can be useful in studying natural behaviors, social interactions, or complex systems. It also involves the analysis of data.</p><h3 id="040b6064-90d4-4e20-a474-144e8e56682f" class=""><mark class="highlight-yellow"><em>III. Survey Research</em></mark></h3><p id="f88c6a31-43aa-41c0-b089-67329e83b033" class="">It involves data collection through questionnaires or interviews. Surveys allow researchers to gather information from a large number of participants and explore attitudes, opinions, or behaviors. Data from surveys can be analyzed quantitatively or qualitatively, depending on the particular research objectives. This type of research is mainly used in the social sciences, mathematics, humanities, computer science, and business.</p><h3 id="0f8d537c-b3ae-4ab8-b736-ace58c7e08df" class=""><mark class="highlight-yellow"><em>IV. Qualitative Research</em></mark></h3><p id="5909eb54-fd1e-4d5a-9dc6-a37d2be24c1c" class="">Qualitative research focuses on exploring and understanding the experiences, perceptions, or meanings associated with a particular phenomenon. The collected data is then analyzed using statistical analysis or other qualitative techniques.</p><h3 id="6b5c5c6c-732b-4152-8c1f-c78244924bbb" class=""><mark class="highlight-yellow"><em>V. Quantitative Research</em></mark></h3><p id="bca18eb7-141b-40e5-bb0f-885aade62c96" class="">Quantitative research involves the collection and analysis of numerical data. It relies on statistical methods to identify patterns, relationships, or trends.</p></div></p><h2 id="6d8fb60c-c837-4889-bbd5-2fc5a816ef21" class=""><mark class="highlight-orange">Types of Articles</mark></h2><p id="b95c7041-ac02-496a-bd4a-7ef96f8f59ce" class="">Now, we will be discussing different types of articles.<div class="indented"><h3 id="6be3f2b6-73c0-48a9-b20c-21d1ed0171a5" class=""><mark class="highlight-yellow"><em>I. Research Article</em></mark></h3><p id="4e032a53-03d3-49f3-9deb-bc4bea5d8bb6" class="">Research articles present original research findings and represent empirical research. They contribute to the body of knowledge by introducing new discoveries, methodologies, or insights.</p><h3 id="f5afc412-83b4-41cc-9d12-f05860c6bdcd" class=""><mark class="highlight-yellow"><em>II. Review Article</em></mark></h3><p id="3d8a8cf1-9274-4de2-8b01-28baf82ea21f" class="">It provides a comprehensive overview and analysis of existing research on a specific topic. Review articles critically evaluate the existing literature, identify gaps or controversies, and propose future research directions. However, they aren’t made for the sake of presenting new findings. These types of articles help readers gain a deeper understanding of a particular field or topic by synthesizing and summarizing relevant studies.</p></div></p><p id="e12c4039-e40a-4d9d-9913-cdc8b32a3c01" class="">Note that there are other article types: case reports, conference papers, technical reports, etc.</p><h2 id="a5b37071-3dfd-4bf3-9054-0b7f9723bdc8" class=""><mark class="highlight-orange">The Research Process</mark></h2><p id="7fa88ea8-ee84-41f7-a896-dea48e6124f2" class="">Now, you got some essence of what the concept means. However, you still miss a really big part: the research process. To make it easier to grasp, let’s talk about science first. </p><p id="29b16189-ec21-4e22-b3f4-c7bed556c3da" class="">The scientific method, or scientific approach, is the process of objectively establishing facts through testing and experimentation. It is based on making a hypothesis, which is a testable statement about the relationship between two or more variables or a proposed explanation for some observed phenomenon, and trying to prove that hypothesis through experimental data. The last step of the scientific method is communicating your final findings to the scientific community for criticism. This step right there is the one including further thought on how you could correctly pass down the information you gained to descending generations of scientists in the field. </p><p id="167b294e-dc18-4a80-98af-328acc871151" class="">All in all, the research process is the systematic manner in which a researcher approaches their area of study to produce knowledge that the community will consider worthwhile within the field. Research is done through the following steps:<div class="indented"><h3 id="429405f5-a435-43bd-a82c-3095841a3a16" class=""><mark class="highlight-yellow"><em>I. Identifying Research Questions</em></mark></h3><p id="9c3fe798-f7d2-4329-a6f7-70762436eccf" class="">The research process commences with identifying clear and focused research questions that guide the study. These questions define the scope and objectives of the research.</p><h3 id="e1228590-3ded-43ad-acfe-d938d6855c4f" class=""><mark class="highlight-yellow"><em>II. Literature Review</em></mark></h3><p id="98bf58f1-cfa6-4f3e-a9c6-f4cb3710ffb8" class="">Researchers conduct a comprehensive literature review to understand existing knowledge, identify gaps, and establish a theoretical framework for their study. It ensures awareness of previous research, methodologies used, and potential limitations or controversies in the field.</p><h3 id="99a891b0-635b-4668-add4-0b3448c0b186" class=""><mark class="highlight-yellow"><em>III. Designing the Study</em></mark></h3><p id="3584c364-5423-4e29-8bc1-c321c49812da" class="">In this stage, researchers determine the appropriate research design, methodology, and data collection techniques for their study. You should focus that the research design should align with the research questions and objectives.</p><h3 id="a03086f8-ec7c-491c-93b7-a98ffcaad70a" class=""><mark class="highlight-yellow"><em>IV. Data Collection</em></mark></h3><p id="44ee7527-959f-4eb2-a681-1721df918e70" class="">The collection involves gathering relevant information or evidence to answer the research questions. Researchers employ various methods to collect data, such as surveys, interviews, experiments, or observations.</p><h3 id="27611773-bd46-4e0a-acdc-1a0362b6e2be" class=""><mark class="highlight-yellow"><em>V. Data Analysis</em></mark></h3><p id="f30a841a-7bee-4941-b199-9b3e58ca0008" class="">Once the data is collected, researchers analyze it using appropriate statistical or qualitative analysis methods. Quantitative data may be analyzed using statistical software to identify patterns, correlations, or trends. Qualitative data may involve coding and categorizing themes.</p><h3 id="1a6abfc7-d1db-4df6-ae75-ebdb3db59275" class=""><mark class="highlight-yellow"><em>VI. Interpretation and Reporting</em></mark></h3><p id="16edbf73-5f61-4bb3-a728-4b7703811cf4" class="">In this stage, researchers interpret the analyzed data, draw conclusions, and discuss the implications of their findings. They compare their results with existing literature, address research questions, and present a coherent narrative. Researchers may use tables, figures, or visual representations to illustrate their findings.</p><p id="b09d28db-57c6-4bc5-aaef-fc8999b30fb8" class="">
+</p><p id="fad18091-40b6-4f33-8cf4-dc42c09a4383" class=""><em>All in all, research is an invaluable tool that humanity has been utilizing since the dawn of history. Now, you are familiar with its nature, core characteristics, types, and research process.</em></p><hr id="aeffc202-64f3-4b64-a51a-f1d82bc053d8"/><h3 id="738b39fb-1456-477b-8bbe-05b8dcc53cb5" class=""><mark class="highlight-orange">References/Further Reading:</mark></h3><figure id="be3f3f4f-a634-4dbd-afd9-2a6fee2963ba"><a href="https://owl.excelsior.edu/research/research-process/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Research Process</div><div class="bookmark-description">An Overview Writing a research paper is often the most complex writing task you’ll engage in during your college career. The process of locating sources, note-taking, drafting, and editing offers you the opportunity to...</div></div><div class="bookmark-href"><img src="https://owl.excelsior.edu/wp-content/uploads/2022/12/cropped-owl-favicon-white-192x192.png" class="icon bookmark-icon"/>https://owl.excelsior.edu/research/research-process/</div></div><img src="https://owl.excelsior.edu/wp-content/uploads/2018/07/research-390297_1920.jpg" class="bookmark-image"/></a></figure><figure id="2f3b86f6-a985-4706-ade1-e8f566fc567e"><a href="https://www.scribbr.com/methodology/research-design/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What Is a Research Design | Types, Guide &amp; Examples</div><div class="bookmark-description">A research design is a strategy for answering your research question using empirical data. Creating a research design means making decisions about: Your</div></div><div class="bookmark-href"><img src="https://www.scribbr.com/android-chrome-192x192.png" class="icon bookmark-icon"/>https://www.scribbr.com/methodology/research-design/</div></div><img src="https://www.scribbr.com/wp-content/uploads/2021/02/open-graph-scribbrcom.png" class="bookmark-image"/></a></figure><figure id="403d339c-7e4a-4cfd-8e13-6a2899c73e78"><a href="https://www.scribbr.com/methodology/literature-review/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to Write a Literature Review | Guide, Examples, &amp; Templates</div><div class="bookmark-description">What is a literature review? A literature review is a survey of scholarly sources on a specific topic. It provides an overview of current knowledge,</div></div><div class="bookmark-href"><img src="https://www.scribbr.com/android-chrome-192x192.png" class="icon bookmark-icon"/>https://www.scribbr.com/methodology/literature-review/</div></div><img src="https://www.scribbr.nl/wp-content/uploads/2022/04/Literature-review-guide.webp" class="bookmark-image"/></a></figure><figure id="9e951ea0-fe40-4188-95a0-40eaa6cdb704"><a href="https://www.techtarget.com/whatis/definition/hypothesis" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">What is hypothesis? | Definition from TechTarget</div><div class="bookmark-description">What is a hypothesis? This definition explains what a hypothesis is and how hypotheses are used in scientific studies. We discuss null, empirical, alternative and logical hypotheses and the differe...</div></div><div class="bookmark-href"><img src="https://www.techtarget.com/apple-touch-icon-144x144.png" class="icon bookmark-icon"/>https://www.techtarget.com/whatis/definition/hypothesis</div></div><img src="https://cdn.ttgtmedia.com/ITKE/images/logos/TTlogo-379x201.png" class="bookmark-image"/></a></figure><figure id="4b5ef95a-b0ea-484e-b737-98c3a656afb7"><a href="https://libguides.westminster.ac.uk/literature-reviews" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">LibGuides: Literature Reviews: Start</div></div><div class="bookmark-href"><img src="https://libapps-eu.s3.amazonaws.com/apps/common/favicon/apple-touch-icon.png" class="icon bookmark-icon"/>https://libguides.westminster.ac.uk/literature-reviews</div></div></a></figure><figure id="d078c21b-e2fd-4b8d-9c53-d4b6edd184d1"><a href="https://research.wou.edu/literature-review-generaloverview" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://research.wou.edu/literature-review-generaloverview</div></div></a></figure><p id="faa7b9e5-229b-48d9-81d7-f6f17b6e81b1" class="">
+</p></div></p></div></article></body></html>

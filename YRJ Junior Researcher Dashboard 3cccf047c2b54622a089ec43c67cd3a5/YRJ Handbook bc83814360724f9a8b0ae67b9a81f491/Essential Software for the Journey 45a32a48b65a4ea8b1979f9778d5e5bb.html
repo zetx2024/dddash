@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Essential Software for the Journey</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="45a32a48-b65a-4ea8-b197-9f9778d5e5bb" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1580983559367-0dc2f8934365?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 29.65%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🖥️</span></div><h1 class="page-title">Essential Software for the Journey</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="325acdfe-2d8a-4b6b-af95-35b6875f5a5d"><div style="font-size:1.5em"><span class="icon">🔍</span></div><div style="width:100%">In your research journey, you should utilize efficiently the resources that are available to you. Most of the time, there are difficult constraints you may face, including limited time before submission, low/no budget, and the list continues. Thus, increasing your productivity is directly linked to utilizing possible opportunities to decrease time taken in tedious and repetitive processes so that you can allocate more time to refining your original research idea and improving the way you present it. Moreover, technology has advanced greatly in the recent years, and you may find that there are various software tools that can save a great portion of your time and effort.</div></figure><h2 id="d9d98c2a-fc25-4455-9d1d-92ca1eb108ab" class=""><mark class="highlight-orange">Types of Programs</mark></h2><p id="6ff3bcd9-49b2-47bc-8c65-26e576bbda87" class="">In regard to the research process, there are 3 main types of programs that can offer substantial help:<div class="indented"><h3 id="390a54e7-cde2-4fee-a8fb-6fbd693b4035" class=""><mark class="highlight-yellow"><em>I. Simulation and Field-Specific Programs: </em></mark></h3><p id="39c6ead5-7f4e-4dac-9c45-6ef39a95ac4f" class="">These include programs like AutoCAD, Gambit, Aspen Plus, and other programs that help you make mathematical models, conduct experiments in simulations, or even make visual models and schematic diagrams for your paper. The recommended programs differ greatly according to your research field. Other factors, such as the budget and level of experience needed, can significantly affect your best choice.</p><p id="4f45c532-8b3f-452e-903d-a0e56a5daf5a" class="">This training guide does not include detailed explanations and tutorials for each program due to the existence of thousands of them for varying needs. Nevertheless, at YRJ, we highly recommend that you contact your mentor regarding possible software options designed for your field. They will suggest resources for you to know the process of downloading and using these software programs.</p><h3 id="08a4b52a-d488-4c97-98d3-dc2d22643622" class=""><mark class="highlight-yellow"><em>II. Research Assistant Tools: </em></mark></h3><p id="0b60bc2b-6ce8-4d67-b57b-a9de1e13a334" class="">These are generic tools that automate some steps of the research process. This includes citing sources, proofreading, and correcting grammatical and stylistic errors. You can sort items into collections and create full bibliographies using these tools in a few minutes.</p><h3 id="41fd94b2-8b21-452d-ae31-451e1018d815" class=""><mark class="highlight-yellow"><em>III. Typesetting Software: </em></mark></h3><p id="c3313ef4-0d1a-4c93-bd0c-b4c40a257cb9" class="">After collecting the data needed for your research paper and forming your original arguments, you will consider presenting your work in the most accurate and professional shape and format. While Word offers a variety of features and flexibility as a text editor, it has limitations when style consistency is considered, which makes it difficult to maintain a united style throughout your paper. Moreover, writing long mathematical proofs, code sections, and other technical text is challenging in Word since it was designed with the “Office” needs in mind but not the “Research” needs. Hence, configuring your document settings and formatting it appropriately can take precious hours from your time. Thus, while Word and Google Docs may seem quick options, you should consider professional software such as LaTeX and Scrivener if you want to maximize your time efficiency on the long run.</p></div></p><h2 id="062e4eb8-0816-4992-8a12-e66159b84ef4" class=""><mark class="highlight-orange">Zotero</mark></h2><p id="630b0f69-2c70-45c8-95a7-3c59a5b603bf" class="">Zotero is an open-source research assistant tool that helps you manage your bibliographies and make automatic citations. Zotero is a valuable tool that can help you organize your sources and also find articles you need on the internet.<a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=322s&amp;ab_channel=StevenBradburn"> Use this video to help you get started.</a></p><h3 id="e6f7e595-59bc-4bc6-af61-565cc0c93eef" class=""><mark class="highlight-yellow"><em>Features of Zotero include:</em></mark></h3><ul id="bb5a6fb6-29c0-4e6a-8ccf-4d43caf21b3d" class="bulleted-list"><li style="list-style-type:disc">Collaborating with a colleague while writing a paper or sharing sources.</li></ul><ul id="545f3f03-933c-4a2d-b386-f7ff1e0ad238" class="bulleted-list"><li style="list-style-type:disc">Collecting metadata and citation information through the browser extension.</li></ul><ul id="fd1bae6b-68f5-44c5-9de5-d9fce1e6a1e2" class="bulleted-list"><li style="list-style-type:disc">Automatically creating and organizing a bibliography and a reference list for your paper.</li></ul><ul id="f9cf3714-7d01-45ff-91d3-d9350d6dbd37" class="bulleted-list"><li style="list-style-type:disc">Support for experience-enhancing plugins. The official documentation allows you to delve deeper into the program capabilities and maximize your efficiency while using it.</li></ul><h2 id="069214d7-6bd6-45b3-8f30-41d73a1a09cf" class=""><mark class="highlight-orange">Plagiarism Checkers:</mark></h2><p id="1c1f3729-73ea-485d-81c3-6ac927be2176" class="">Plagiarism Checkers are an essential tool to use before submitting your paper. After completing each section of your paper, you should put the text in a plagiarism checker to ensure that you did not accidentally plagiarize. A plagiarism checker scans your text and compares it with papers stored in a large database to analyze the similarities between your text and other sources. Typically, a plagiarism checker gives you a similarity score and an accompanying detailed report that shows where you most likely plagiarized and parts where the system detected high similarity. Refer to this table to understand your similarity score.</p><table id="672d22a9-9a52-49f6-9e42-165b6fcec53a" class="simple-table"><thead class="simple-table-header"></thead><tbody><tr id="cec9d13d-a48a-4ade-85b2-e35e2eab3c24"><td id="|m@b" class=""><strong>0 - 5% – Almost No Similarity (Not Good)</strong></td><td id="&lt;[TG" class="" style="width:579px">Your paper shows no similarity with other previous papers. Although 0% similarity may seem a good score, it indicates the absence of citations or supporting evidence from other</td></tr><tr id="efba43cb-b940-4824-8deb-d66c1f50d93f"><td id="|m@b" class="">5<strong>– 25 % Little Similarity (Ideal)</strong></td><td id="&lt;[TG" class="" style="width:579px">This is the ideal percentage for a paper. However, the maximum allowed percentage depends on several factors, including your research field and the type of your paper.</td></tr><tr id="364c92aa-2bc1-4cce-a3ef-76ebc7ff6f9b"><td id="|m@b" class=""><strong>25 – 50 % Remarkable Similarity –
+Notable Plagiarism (Needs
+Improvement)</strong></td><td id="&lt;[TG" class="" style="width:579px">The paper shows noticeable similarity with other papers. If you are certain that you did not commit plagiarism, consider restructuring your sentences and include your original ideas. Ensure that your paper is not just a combination of other sources.</td></tr><tr id="05ca5955-f6c9-4600-8f38-7afc8d5b79c6"><td id="|m@b" class=""><strong>50 – 75 % High Similarity – Severe
+Plagiarism (Needs Serious Revision)</strong></td><td id="&lt;[TG" class="" style="width:579px">The paper needs careful revision. Rewriting some sections completely and ensuring the originality of the idea is required. Delete quotations from other sources and paraphrase the source text while including your original ideas.</td></tr><tr id="62283d05-d704-40e9-8fbd-8cc761d298df"><td id="|m@b" class=""><strong>75 – 100 % Complete Plagiarism
+(Totally Unacceptable)</strong></td><td id="&lt;[TG" class="" style="width:579px">You have committed plagiarism, and submitting a paper with this score is considered a severe academic misconduct. It may be a great idea to rewrite your paper again and ensure that you do not include too many quotations from other sources.</td></tr></tbody></table><p id="bd090149-b1f0-42f1-854f-813b7d526b96" class="">You can use <a href="https://www.scribbr.com/plagiarism/best-plagiarism-checker/">this list</a> and <a href="https://www.scribbr.com/plagiarism/best-free-plagiarism-checker/">this list</a> to compare popular plagiarism checkers and decide which one best suits you.</p><h2 id="cf76bc75-49f0-4e10-876c-fa36361f48bb" class=""><mark class="highlight-orange">LaTeX (optional)</mark></h2><p id="a197f213-fd93-4a8f-b099-c0006612322c" class="">LaTeX is a distribution used for the production of high-quality technical documents, especially research papers. LaTeX is much better than other writing software like Microsoft Word for producing complex documents. This is due to the availability of a vast library that includes customizable elements that allow users to change the format of their papers easily. It also includes built-in graphing software for displaying data neatly. LaTeX comes in many distributions.</p><h3 id="81d2b461-43ba-4c79-b69f-68b6d54c5434" class=""><mark class="highlight-yellow"><em>LaTeX Distributions</em></mark></h3><ol type="1" id="a92acdfd-7440-4fed-85e3-a6af1645ee6d" class="numbered-list" start="1"><li><mark class="highlight-brown"><strong>Basic LaTeX + Notepad (or any text file generator): </strong></mark>That is true. If you have downloaded LaTeX from the official website. You can have access to it right away. Open any text file and write your LaTeX text and then save it as a .tex file. The distribution includes a very basic PDF converter so that you can export your text and review your work. However, this option does not have many features compared to the next options since it is time consuming and generally considered outdated for both beginners and professionals.</li></ol><ol type="1" id="1e5f91a4-916c-4e7e-8eaf-af8d98af3034" class="numbered-list" start="2"><li><mark class="highlight-brown"><strong>TeXStudio and other desktop distributions: T</strong></mark>eXStudio is a standard choice if you need a desktop distribution that runs on Windows, Unix/Linux, BSD, or Mac OS X. Besides, if you are new to LaTeX, then TeXStudio can help you learn quickly through its visually rich GUI and menus for the different symbols and formatting functions. TeXStudio is an open-source software. Hence, there are no limitations on what you can do. It is also installed with a What You See is What You Get (WYSWYG) option for newcomers.</li></ol><ol type="1" id="f2d889e9-463e-4506-b05f-356e7713959a" class="numbered-list" start="3"><li><mark class="highlight-brown"><strong>Overleaf:</strong></mark> Overleaf is an online LaTeX distribution. Hence, it does not require any setup and works perfectly fine regardless of the operating system. Moreover, Overleaf offers many exclusive features, including free access to thousands of professional templates, online collaboration, and improved console and error detection. However, the standard version of Overleaf has a processing time limit of 1 minute for your documents. This means that if the compiler takes more than 1 minute to process your document, it will not be converted into PDF. Hence, it may be difficult to maintain a large document on Overleaf.</li></ol><p id="2c66c14a-cf4a-4216-aa5d-cebbfe223be2" class="">The easiest distribution for LaTeX is Overleaf. You can find a concise and nice guide on the website to get started quickly. </p><p id="f0053b3b-f82a-4ddc-9096-733950b3c32c" class=""><a href="Essential%20Software%20for%20the%20Journey%2045a32a48b65a4ea8b1979f9778d5e5bb.html">Overleaf Tutorial</a>: Here is a helpful playlist to learn LaTeX, made using Overleaf Distribution LaTeX Playlist.</p><p id="782e3c18-01cd-419b-a753-5ce4e5a5f3f3" class="">In this guide, we will include very basic information on how to use LaTeX. Subsequently, there are much more to be learned using online resources and the LaTeX official documentation.</p><h2 id="aaac3697-3593-4a5a-b807-104c62a4e5c2" class=""><mark class="highlight-orange">Basics of LaTeX</mark></h2><h3 id="4276bb73-523d-4e93-88b8-0b977bc36e02" class=""><mark class="highlight-yellow"><em>Writing your first LaTeX document</em></mark></h3><p id="5ab5641d-31f7-46df-98f1-6de3b882d841" class="">A basic LaTeX document will just consist of a plain page with a paragraph in it. The LaTeX structure for this is as the following:</p><pre id="60a42dd8-0f9e-47e5-b515-17f534da0046" class="code"><code>\documentclass{article}
+\begin{document}
+First document. This is a simple example, with no
+extra parameters or packages included.
+\end{document}</code></pre><p id="4e22ed1c-0784-4b5d-a34d-a983446934ac" class="">Notice that any LaTeX command is preceded by a backslash “\”. The first line \documentclass{article} determines the type of our document to be an article. There are other types of document classes such as books, letters, slides, and beamer. However, you will be mostly working with articles. The \begin{document} and its end tag mark the space in which you will be writing your paper.</p><h3 id="fce8514d-5b3c-4269-b167-5ee3c45d9d95" class=""><mark class="highlight-yellow"><em>Adding more stuff to our plain paper</em></mark></h3><p id="a3e5975a-e69f-42fb-8de8-7f23f25f7214" class="">Suppose I want to give our paper a title and an author, maybe even a date. I also want the font size to be 14pt. Then it can be done this way:</p><pre id="f9b42a19-7d82-4c1a-a041-b5a891a7fda2" class="code"><code>\documentclass[14pt]{article}
+\title{Your first document}
+\author{The author’s name}
+\date{June 2022}
+\begin{document}
+\maketitle
+First document. This is a simple example, with no
+extra parameters or packages included.
+\end{document}</code></pre><p id="9aad1f70-35aa-4e97-94ad-74cc7756e0e7" class="">I put the size of the font I want in square brackets in the \documentclass[14pt] tag. The title of the paper and its author’s name are written in the tags specified for them. However, they won’t be displayed until you write the command \maketitle inside the document begin and end tags.</p><h3 id="8a85c362-fc72-4269-8077-2092218469c0" class=""><mark class="highlight-yellow"><em>Text Formatting</em></mark></h3><p id="b8b9d317-7700-43d6-ad99-ac54f7c4b34a" class="">These are several tags you should know for formatting your text:</p><pre id="8201f0bf-8bc0-4273-9437-47ad306ca73d" class="code"><code>\textbf{your text here will be bold.}
+\underline{underlined text.}
+\textit{italicized text.}
+\textbf{\textit{italicized and bold text.}</code></pre><h3 id="665fca90-a16e-4f12-acfd-ba56d676e128" class=""><mark class="highlight-yellow"><em>Creating Lists</em></mark></h3><p id="7f2ace4f-3948-40a4-bd55-474d66ad4b16" class="">You can create an unordered list using the following block:</p><pre id="4bf227ea-d167-4abe-8aca-1f2935504cac" class="code"><code>\begin{itemize}
+\item The individual entries are indicated with a black dot, a so-called bullet.
+\item The text in the entries may be of any length.
+\end{itemize}</code></pre><p id="2a1dd33c-6ad2-43e9-b148-fe1028b5b9ec" class="">Where every entry in the list must be preceded by an \item tag.</p><p id="f94ea036-43aa-4c7f-ae07-c3130dfd1532" class="">For ordered lists, we use enumerate inside of the itemize tag:</p><pre id="9caa820a-d2eb-43e4-8308-aee6c42c6475" class="code"><code>\begin{enumerate}
+\item This is the first entry in our list
+\item The list numbers increase with each entry we add
+\end{enumerate}</code></pre><h3 id="543d6a62-ef90-470a-b4ef-a34504af6257" class=""><mark class="highlight-yellow"><em>Creating Chapters and sections</em></mark></h3><p id="3470a1b1-ea0e-4c96-9fdf-85bf42a42cd0" class="">The method for this is straightforward just use the tags \chapter{your chapter’s name here} and \section{section name here}:</p><pre id="fc5709ed-788e-4265-8181-0d5231818678" class="code"><code>\begin{document}
+\chapter{First Chapter}
+\section{Introduction}</code></pre><p id="a1c5b587-cd5e-42ea-9b51-b44add73286e" class="">Here you write your introduction and let’s say you are finished and want to go to another section.</p><pre id="a1332f30-135f-4bc8-af0d-0f535fe42794" class="code"><code>\section{Discussion}</code></pre><p id="e369fa73-ea05-4a08-b348-bf5be03ae6f2" class="">You can also divide sections into subsections:</p><pre id="1f7c7be0-312e-4c6e-a2e9-3cce1fad6327" class="code"><code>\subsection{subsection1}
+\subsection{subsection2}
+\end{document}</code></pre><h3 id="7d577e1e-ba57-42a8-b7be-489bc742ec02" class=""><mark class="highlight-yellow"><em>Making a bibliography</em></mark></h3><p id="591b911a-db05-40cc-a122-05759de39701" class="">To cite anything neatly in your paper you can make a bibliography using the following command:</p><pre id="1202669e-fd31-4e3f-852d-ee68b7161ad5" class="code"><code>\begin{document}
+%Suppose this is the line you want to cite in your paper \cite{Name of the textbook/paper you cited}.
+\begin{thebibliography}
+\bibitem{Name of the textbook/paper you cited}
+%Here you insert the Harvard format citation for the book/paper. You can get it from google scholar or citation machine. For example:
+Shannon, A. (2012). Elliptic Tales: Curves, Counting and Number Theory, Princeton University Press
+\end{thebibliography}
+\end{document} </code></pre><p id="98cf00e6-e791-4825-afab-daf4fe156f4c" class="">You can find more documentation and tutorials for Overleaf in this link<a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes"> Overleaf Tutorial</a>.</p><hr id="f67dd20e-8bd0-4eef-92f6-61260333a1c2"/><p id="ed929471-6131-4386-baa5-5e320c651e16" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="88f6408a-6139-4d3c-997a-6d3856c81b55"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">We are no longer in the 19th or 20th century, the advancing technology has allowed researchers to utilize many tools to increase the accuracy and efficacy of the research process. When writing your research paper, you will find yourself using 3 types of software on a frequent, maybe even daily basis: Research Assistant Programs, such as Zotero; Typesetting Software, such as LaTeX; Plagiarism Checkers. Utilizing these resources efficiently is a major characteristic of a competent and professional researcher. Do not be afraid if you have never tried them before; open a YouTube tutorial and learn the basics, and then you are set up! Remember that you can always contact your mentor if you faced any issues. Moreover, your mentor could have suggestions about other software beneficial in your scientific field. Utilize the power of technology! (Wisely - No ChatGPT Misuse)</div></figure></div></article></body></html>

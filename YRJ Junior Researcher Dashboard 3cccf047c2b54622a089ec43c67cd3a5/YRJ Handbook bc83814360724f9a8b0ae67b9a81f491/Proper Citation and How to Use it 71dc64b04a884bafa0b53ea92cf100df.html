@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Proper Citation and How to Use it.</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="71dc64b0-4a88-4baf-a0b5-3ea92cf100df" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_blue.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📋</span></div><h1 class="page-title">Proper Citation and How to Use it.</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0bc9586f-17ce-4a5d-9580-a7de583b7847"><div style="font-size:1.5em"><span class="icon">🔍</span></div><div style="width:100%">When writing an academic assignment, a research article, or any kind of scientific writing, it is important to use different sources to build and support your point of view. Nevertheless, it is also essential to cite ideas from sources used in your paper to show that these are NOT your own ideas.</div></figure><h2 id="14d18e3e-67b3-4048-9b81-cd025401c198" class=""><mark class="highlight-orange">Understanding Citation and Its Importance</mark></h2><h3 id="1d56f16e-e83a-4fa4-8a48-e0554bbdef88" class=""><mark class="highlight-yellow"><em>Definition of Citations</em></mark></h3><p id="dae830b4-3215-4666-b7bb-1b5639b77391" class="">So, what is a citation? At its core, citation is a way to inform the reader that a certain portion of the material covered in your paper, is inspired, created, or taken from another source. Before discussing the correct method of citation, we should first highlight its importance, and how, when not paying careful attention, one may commit <em>plagiarism.</em></p><h3 id="3ae3506e-8bc4-4d94-b8c1-2f843b527a54" class=""><mark class="highlight-yellow"><em>Role of Citation in Academic Work</em></mark></h3><p id="fc1cc03f-c555-4b19-9af3-61be67f6e6c2" class="">First, citation is crucial for academic work under all professional and academic standards. It is one of the main components of <em>Academic Integrity.</em> Academic integrity stands for the set of ethical values that are related to academia. As described by the International Center of Academic Integrity (ICAI), the term includes all values that are necessary for one’s work to be accepted and respected in the academic community:</p><ul id="c70109d9-df74-4523-b65a-db17c03af0c9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Responsibility:</strong></mark> You are responsible for the creation of your paper, gathering sufficient information about the topic, and correctly presenting your arguments. It is also your duty to follow your institutional conduct codes and represent your values as a scholar.</li></ul><ul id="ebe25a63-6df1-489c-9fd8-078ed1621f14" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Honesty:</strong></mark><mark class="highlight-brown"> </mark>You must acknowledge the efforts of other scholars and credit them when needed. Further, do not hesitate to admit mistakes in your work or make updates regarding the reliability of your results should any information be updated.</li></ul><ul id="51b6634a-8b88-46aa-820a-636407c859c1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Trust:</strong></mark><strong> </strong>Your work should be as accurate as possible. You should be transparent about your procedures, the interpretation of your results, and any limitations linked to your methodology to enable other scholars to trust your results.</li></ul><ul id="368e3feb-07ad-4f20-a3ae-d6dcae19d40e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Respect:</strong></mark><mark class="highlight-brown"> </mark>Always value others’ perspectives and previous work. Accept the feedback you receive and appreciate the importance of constructive criticism.</li></ul><ul id="30ac09d1-2d20-40c5-bb1a-50ed33045d64" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Justice:</strong></mark><mark class="highlight-brown"> </mark>Rules should be applied equally, and academic policies must be the same for all members of the community.</li></ul><h2 id="6465bdf8-2977-4c68-8f4e-6cd4fce33232" class=""><mark class="highlight-orange">Plagiarism: Definition and Consequences </mark></h2><h3 id="00902586-e406-4df0-aa96-66059b04c900" class=""><mark class="highlight-yellow"><em><strong>What is Plagiarism?</strong></em></mark></h3><p id="63cd21de-9653-4442-8a8d-71db7a1fb3d2" class="">Failure to cite your sources correctly, whether intentionally or not, is called <strong>“Plagiarism”</strong>. Plagiarism is the act of using another person&#x27;s words or ideas without giving due credit to the original author. This definition uses the word &quot;steal&quot; to refer to intentional instances in which someone uses another&#x27;s thoughts or words without giving due credit. Given that your work attempts to copy the work of another and claim it as your own. However, even accidentally borrowing someone else&#x27;s thoughts or words without providing appropriate citations is included in this definition. So, forgetting to cite because of lack of care or attention is also plagiarism, and thus a crime. Plagiarism is a major form of academic misconduct and dishonesty since it does not reflect one’s ideas and contributions to the field. In addition, plagiarism is considered a serious crime, and ignorance and careless mistakes are not taken as an excuse, nor do they lessen the severity of the consequences. In fact, receiving a failing degree for an assignment in which plagiarism took place is one of the mildest punishments; other common consequences include failing the entire course, canceling any form of financial aid, and suspension or dismissal from the university. When it comes to academic reputation, plagiarism is detrimental to the plagiarist reputation. Their academic records will be impacted by this offense, and they may be prevented from entering college. Moreover, finding a respectable job in the academic field will be very difficult. One who plagiarizes even once may completely lose all professional referrals and even face legal repercussions.</p><h3 id="f38cf0aa-371b-4bcf-b343-aae073cd9502" class=""><mark class="highlight-yellow"><em><strong>Forms of Plagiarism:</strong></em></mark></h3><table id="3e8a84f6-7d5d-460b-b64a-e4fb8d3602cf" class="simple-table"><thead class="simple-table-header"><tr id="2d35b372-c1f8-41fd-8019-3444eb7131c0"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Type</strong></th><th id="dA\V" class="simple-table-header-color simple-table-header" style="width:549px"><strong>Description</strong></th></tr></thead><tbody><tr id="50e0b790-d313-4049-a759-6d885f86638c"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Identity Theft (Complete Plagiarism)</strong></th><td id="dA\V" class="" style="width:549px">This takes place when a writer submits a complete document written by someone else as their own work with their name. Examples include downloading a ready assignment from the internet or paying someone to write a paper for you and then submitting it by your name. This plagiarism is a serious form of identity theft, and the legal consequences can become very severe.</td></tr><tr id="7e1cc573-895a-49fa-817a-0190aedd5c6e"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Direct Plagiarism</strong></th><td id="dA\V" class="" style="width:549px">This is often the simplest example that comes to mind when the word “plagiarism” is mentioned although other equally serious forms exist as we should see. Direct plagiarism is almost identical to complete plagiarism since both include copying words from another source exactly without admitting it. However, the key difference lies in the amount of plagiarized work. While complete plagiarism includes stealing complete documents, direct plagiarism includes copying any meaningful amount from the original source. This can range from complete sections to even a line or two.</td></tr><tr id="2135f5e0-21e5-4552-a62b-7292651f7ef9"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Paraphrasing Plagiarism</strong></th><td id="dA\V" class="" style="width:549px">Many students unknowingly commit this type of plagiarism. Paraphrasing Plagiarism is when you use another source in your writing while changing several words and phrases so that it appears that it is your own work. Even if you did not use exact words from the original source and presented it using your style, it is equally mandatory to cite it if your arguments includes ideas taken from that source.</td></tr><tr id="b1bd950e-05cc-4bf8-a64d-33fc2d95d8ba"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Recycling</strong></th><td id="dA\V" class="" style="width:549px">Plagiarizing yourself is a real case of plagiarism and is still severe when not given permission by the institution you are submitting your work to. Taking sections from your previous papers and articles and incorporating them into a new one represents the act of self-plagiarism. Although the ideas you present are your ideas, you are always expected to write fundamentally original content when sending your work to any academic institution. Self-plagiarism can be easily avoided by asking for permission from the professor or the institution to use old content. Nevertheless, it is essential to remember that you <strong>must </strong>also have permission from the academic entity you submitted<em> your old work</em> to.</td></tr><tr id="86a4d25e-0710-4ba9-96b2-d39c38e01797"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Source-based plagiarism</strong></th><td id="dA\V" class="" style="width:549px">This includes inaccuracies in listing the sources used. Examples include citing the wrong source and sometimes coming up with a non-existent source. A subtle form of this type is when you reference a secondary source (for example, a research paper discussing results of another paper) but give credits only to the primary source (the original source of data).</td></tr><tr id="e4598876-3a37-4974-90f1-52a268726ba7"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Mosaic Plagiarism</strong></th><td id="dA\V" class="" style="width:549px">Mosaic Plagiarism happens when a writer mixes tiny parts of text with their work in a subtle way that could be missed easily. For example, a sentence may be composed of the writer’s original words and a part taken from another source, which could be a clause or a long, non-technical expression or other meaningful text. Writing technical terms in the field is not considered plagiarism if they are assumed as common knowledge. Just writing them does not mean that a source should be cited as long as no ideas were taken from it. If you have doubts, it is always better to cite!</td></tr><tr id="0a7ea916-130b-4276-b580-1a85a96a1077"><th id="OtZ~" class="simple-table-header-color simple-table-header" style="width:155px"><strong>Accidental Plagiarism</strong></th><td id="dA\V" class="" style="width:549px">This includes other types of plagiarism that could be done unintentionally. A few examples are forgetting to cite a source, citing a source incorrectly, or forgetting to state that some part of the text is taken from another source. This could happen, for instance, when you forget to put the quoted text between quotation marks.
+The following infographic can help you determine if you committed plagiarism in your work or not. However, these are only guidelines, and you should remember what citation is all about: acknowledging that you benefited from a source in your work.</td></tr></tbody></table><figure id="965aa014-9722-467d-aaf5-ab4dec7de281" class="image"><a href="Proper%20Citation%20and%20How%20to%20Use%20it%2071dc64b04a884bafa0b53ea92cf100df/Untitled.png"><img style="width:2550px" src="Proper%20Citation%20and%20How%20to%20Use%20it%2071dc64b04a884bafa0b53ea92cf100df/Untitled.png"/></a></figure><h2 id="584c586e-f24d-43ca-9694-ca3330b2d608" class=""><mark class="highlight-orange"><strong>How to avoid plagiarism?</strong></mark></h2><p id="8f7da56e-89de-4d62-8d57-a8d03ae12274" class="">Fortunately, it’s not all scary. Avoiding plagiarism is easy to do now that you have a foundational understanding of what it is. To help you steer clear of this taboo, here’s how to avoid plagiarism in your writing.<div class="indented"><h3 id="4669ed37-1298-4c6e-99dc-7ec21ddaae37" class=""><mark class="highlight-yellow"><em>I. </em></mark><mark class="highlight-yellow"><em><strong>Cite your source</strong></em></mark></h3><p id="1b9454ab-294d-4261-99e0-ec419a81afab" class="">When alluding to an idea or wording that’s not your own, add a citation in your writing that identifies the full name of the source, the date it was published, and any other citation element that’s required by the style guide you’re adhering to.</p><h3 id="349262c2-7ac9-401c-bd84-053f86150e4f" class=""><mark class="highlight-yellow"><em>II. </em></mark><mark class="highlight-yellow"><em><strong>Include quotations</strong></em></mark></h3><p id="31d48004-75b0-445d-bfdb-b32ab09442b4" class="">If you insert a source’s words into your writing, verbatim, one of the simplest yet obvious ways to avoid plagiarism is by using quotation marks around the text to denote that the words aren’t your own. A direct quote should also cite the source so that readers know who the quote is from.</p><h3 id="3843ead3-1015-422d-b9e2-a2ce8b10976f" class=""><mark class="highlight-yellow"><em>III. </em></mark><mark class="highlight-yellow"><em><strong>Paraphrase but</strong></em></mark></h3><p id="ab6e4044-4e2c-4932-81ee-f3b0ea07d1b2" class="">Paraphrasing is rewriting a source’s ideas or information into your own words, without changing its meaning. But be careful—paraphrasing can slip into plagiarism if done incorrectly.</p><p id="08f37337-4895-403f-8027-f3a00dcaf6e0" class="">Successfully paraphrasing without plagiarizing involves a bit of a dance. Reword and format your writing originally, and try to avoid using too many similar words or phrases from the source. The key is to do so without altering the meaning of the idea itself.</p><p id="925e279a-a40f-4833-9af8-82a147e6a691" class="">Remember, you’re still using another’s idea so you’ll need to include a citation to the source.</p><h3 id="e55331e0-4bd0-440a-90ae-a4c8146e5002" class=""><mark class="highlight-yellow"><em>IV. </em></mark><mark class="highlight-yellow"><em><strong>Present your idea</strong></em></mark></h3><p id="f57e1d19-3cd8-4304-871f-d0ce4ea075e4" class="">Ask yourself what unique perspective or point you can contribute in your writing that’s entirely your own. Keep in mind that if you’re alluding to a source’s ideas or words to frame your own point, you’ll still need to apply the guidelines above to avoid plagiarizing.</p><p id="51e7bcea-9cf6-4275-9fe4-c0f7e6600a52" class="">If you’re writing on the same topic for multiple assignments, it can be tempting to recycle some of your previous words—this is called “self-plagiarism”. The risk involved with self-plagiarism is just as high if the publisher or your instructor didn’t permit you to reuse your old work.</p><h3 id="63f523e2-1030-40f3-8b2c-25adae5acd10" class=""><mark class="highlight-yellow"><em>V. </em></mark><mark class="highlight-yellow"><em><strong>Use a plagiarism checker</strong></em></mark></h3><p id="66b77694-2e34-4350-b2be-90305fd35e4e" class="">While conducting your research on a topic, some phrases or sentences might stick with you so well that you inadvertently include them in your writing without a citation. When in doubt, using an online plagiarism checking tool can help you catch these issues before submitting your work.</p></div></p><h2 id="065458e3-8c93-444c-b945-944d9b8ce727" class=""><mark class="highlight-orange">Citations Basics</mark></h2><p id="a911f78e-ca6c-42df-8552-4295aa8b6ff5" class="">Any citation has two parts: in-text citation and a reference. In-text citations allow you to quickly and easily mention the source used, while a reference is often included at the end of the page or the article and contains the full description and details of the source used, including title, author name, journal, issue (if applicable), publisher, etc. Any source cited in your paper must have <strong>both</strong> parts present.</p><p id="05f168f3-764a-4b12-a1b2-718befae4cd7" class=""><mark class="highlight-brown"><strong>Example:</strong></mark></p><p id="a3e598df-ef8e-4d17-921f-4e6bd9277529" class="">In-text: However, it was shown in 2016 that there exist numerical methods for solving Fredholm type equations [4] …</p><p id="eff3c8ca-e770-403f-9279-f9cbc23bbf68" class=""><mark class="highlight-brown"><strong>Reference:</strong></mark></p><p id="32dbd555-d1c8-4ebf-9793-18b1e6767d69" class="">[4] I. Boglaev, “A numerical method for solving nonlinear integro-differential equations of Fredholm type,” <em>Journal of Computational Mathematics</em>, vol. 34, no. 3, pp. 262–284, 2016. doi:10.4208/jcm.1512-m2015-0241</p><h3 id="2fba91de-256d-4ee3-bff2-f041f3cbb85d" class=""><mark class="highlight-yellow"><em><strong>Citation Style:</strong></em></mark></h3><p id="2808c79a-e380-4c1f-ba04-91f77c35bf67" class="">Citation styles are different formatting rules to cite the sources used in the text. All citation styles contain an in-text citation and a detailed reference that uniquely identifies each source. The source data included is identical, but there are small and subtle differences in their order and other small formatting details.</p><p id="c4869a3b-c17f-466d-a490-db2dc18faf14" class="">Examples of citation styles include APA7, MLA, IEEE, and Chicago styles. At YRJ, the IEEE style is used. It offers great advantages when it comes to simplicity and ease of use; for in-text citations, you just insert square brackets “[]”! Further, IEEE is widely used in electrical engineering, in computer science, and in other technical disciplines. In contrast to IEEE, APA7 is popularly used for social sciences while MLA is often used for humanities. Regardless of the type of your paper, you should always ask for information from your professor or the publishing institution about the citation style used.</p><p id="dffab3f0-cdbd-4a3f-935e-c8f994c90167" class="">Each citation style has a guidelines manual that contains details on how to correctly cite sources.</p><p id="cf095ed3-7ee8-45c1-9df3-e5e2bbf293ca" class=""><strong><mark class="highlight-brown">This video will give you an overview of how to cite using IEEE style. </mark></strong></p><figure id="2a6c1b43-78f6-4d5e-8279-ca55e6342103"><a href="https://www.youtube.com/watch?v=pUIgfKY64Fw" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">How to cite and reference in IEEE style</div></div><div class="bookmark-href"><img src="https://www.youtube.com/s/desktop/41d65310/img/favicon_144x144.png" class="icon bookmark-icon"/>https://www.youtube.com/watch?v=pUIgfKY64Fw</div></div><img src="https://i.ytimg.com/vi/pUIgfKY64Fw/maxresdefault.jpg" class="bookmark-image"/></a></figure><p id="b49db24a-d1b2-4e24-ab71-a09fc67d53b8" class=""><mark class="highlight-brown"><strong>You can find here the full guideline rules of IEEE citation style:</strong></mark></p><figure id="f7359fce-f7d8-443d-ac03-803f4dfe878a"><div class="source"><a href="Proper%20Citation%20and%20How%20to%20Use%20it%2071dc64b04a884bafa0b53ea92cf100df/ieee-style-guide.pdf">ieee-style-guide.pdf</a></div></figure><p id="0c7ac30d-5791-4a23-8140-2de0195a9e71" class=""><strong><mark class="highlight-brown">This source also provides plenty of details about the different citation styles used.</mark></strong></p><figure id="aa5f0b8e-cbed-42b8-832d-d006eb615c2e"><a href="https://pitt.libguides.com/citationhelp/overview" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">https://pitt.libguides.com/citationhelp/overview</div><div class="bookmark-description">Need help with formatting citations? Use this brief guide to five major styles.</div></div><div class="bookmark-href"><img src="https://libapps.s3.amazonaws.com/apps/common/favicon/apple-touch-icon.png" class="icon bookmark-icon"/>https://pitt.libguides.com/citationhelp/overview</div></div></a></figure><h3 id="fd12a3ff-9905-4e9d-8c51-9596bbfa518d" class=""><mark class="highlight-yellow"><em><strong>Citation Machines:</strong></em></mark></h3><p id="46b261a3-2c09-4d60-b0fe-5995a75db544" class="">Citation machines are software programs that automate the citation process by collecting the citation information from the source and representing it correctly in the desired citation style. Furthermore, professional research-assistance programs such as Zotero provide you with seamless access to the cited sources and different ways to manage your reference list.</p><p id="6c5f055c-0363-4b80-8b6a-f0d5c3844000" class="">Although citation machines can save much time and effort, it is not recommended to use them at the beginning of your research journey since it is essential to be competent in citing sources manually to spot possible mistakes in the citation or correct information manually. In fact, citation machines often make mistakes, including failing to identify information about the source cited, or even citing a different source with a similar name. These types of mistakes are considered plagiarism if not corrected. Hence, we recommend that you cite a few papers completely manually and grasp the citation process before using citation machine software.</p><h2 id="af2ab4a8-50bf-4742-95f4-99d426262c71" class=""><mark class="highlight-orange"><strong>Notes and Tips</strong></mark></h2><ul id="5cc31db3-c490-477d-9b2e-7eb3426bc06f" class="bulleted-list"><li style="list-style-type:disc">Be sure to use the appropriate formatting depending on the type of source you cite. For instance, the guidelines for citing an academic article published online in a journal are not the same as that for a printed book.</li></ul><ul id="113fdbc7-cfdb-4eba-8b37-2c6eaedb3ab2" class="bulleted-list"><li style="list-style-type:disc">If you use only a page or a few successive pages from a source, it is better to include the number of pages you used in the in-text citation and the reference list. This is especially important for large books where specific pieces of text are difficult to find.</li></ul><ul id="e7ab0e91-5464-43e1-84d2-5968f6b584d0" class="bulleted-list"><li style="list-style-type:disc">Do not forget to be original! The main purpose of including citations is to acknowledge others’ works while supporting your <strong>own</strong> argument. A good research paper has original ideas and approaches developed that are supported by evidence from previous and new data. If you do not intend to make significant contributions to the topic you are discussing in your paper do not have new results. You should consider making a<mark class="highlight-blue"> </mark><span style="border-bottom:0.05em solid"><mark class="highlight-blue"><a href="https://owl.purdue.edu/owl/research_and_citation/conducting_research/writing_a_literature_review.html"><strong>literature review</strong></a></mark></span><span style="border-bottom:0.05em solid"><mark class="highlight-blue"><strong>.</strong></mark></span></li></ul><ul id="9e19bca5-fe64-4e8b-bc47-e0f215a7d4d2" class="bulleted-list"><li style="list-style-type:disc"><strong></strong>Do not include too many quotations in your paper. Not only does that give negative impression that your paper is just a collection of previous ideas with no original insights, but it also significantly increases your plagiarism percentage when the paper is examined with an online plagiarism checker.</li></ul><ul id="e15ba31b-cb01-46b6-958e-6b33d6bfe11f" class="bulleted-list"><li style="list-style-type:disc">Do not forget to record your sources during the search process that precedes writing your paper. You do not want to end up not knowing what sources you used and for which information. Hence, you may put small brackets as a placeholder so that you remember the in-text citation sources when you make them completely. For instance, you may replace the square brackets with ##(Article Title)## and then replace it with the appropriate numbering when you finalize your paper. You can also form the complete reference list the</li></ul><hr id="5a97ef2d-92cd-49a4-9e4b-2a56581c1858"/><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2a9a0102-2322-4d59-a757-fe141af4b954"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Citations are a crucial part of any academic work and majorly constitute academic honesty and integrity. In contrast, plagiarism is the act of including someone’s ideas or work as your own. Plagiarism is an academic crime and misconduct, and the consequences can be severe, even when it is committed accidentally. To avoid plagiarism, you must always cite any part of your text if it includes, ideas, data, or any content taken from another source, even if you paraphrased it.  Do not forget to adhere to the citation style that is specified by your instructor or publishing institution. One of your first steps toward being a successful and honest researcher is mastering the citation process. So, go ahead; try citing some papers using the instructions and tips above! When you have mastered the process, you could use citation machines to be even faster, but always recheck your reference list, especially before final submission of your paper.</div></figure><p id="84702212-4636-4b4b-bf9d-3ff3f0c12f3b" class="">
+</p></div></article></body></html>
