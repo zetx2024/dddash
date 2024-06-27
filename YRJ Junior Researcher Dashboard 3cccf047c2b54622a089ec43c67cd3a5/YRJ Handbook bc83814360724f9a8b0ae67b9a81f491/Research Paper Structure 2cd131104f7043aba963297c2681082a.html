@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Research Paper Structure</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2cd13110-4f70-43ab-a963-297c2681082a" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1532153955177-f59af40d6472?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 46.37%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📰</span></div><h1 class="page-title">Research Paper Structure</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="61044444-d6ae-4729-bd7b-85a6557ef95f"><div style="font-size:1.5em"><span class="icon">🔍</span></div><div style="width:100%">The following introduced sections make up a basic, standard research paper that you can do alter any of them based on the field you are investigating, the research question you are willing to resolve, and the type of research that best fits these two main points. In order to formulate the best sections withing your paper, check this out with your mentor and discuss with him/her these sections in a personalized way to you!</div></figure><h2 id="7c2b2ef1-9c7b-408a-884c-e956cc322e23" class=""><mark class="highlight-orange">Title Page</mark></h2><p id="45e18904-b0e4-4e26-b855-8ab7fe137931" class=""><mark class="highlight-brown"><strong>The aim of this section:</strong></mark> To show off what is the title of the paper, the author and his/her professional information, like the institutional affiliation of the author. <div class="indented"><h3 id="d9e35b19-d73b-49b2-8a6b-39e03a6967e7" class=""><em><mark class="highlight-yellow"><strong>Always do reference these sections while formulating your title page:</strong></mark></em></h3><ul id="bcaba489-6f40-4b1d-aa40-7318c19327c1" class="toggle"><li><details open=""><summary><mark class="highlight-brown"><strong>Section Description</strong></mark></summary><p id="ee107cf7-97eb-4eaf-9617-e8d7b5bdcfd6" class="">The title of your paper is a major determinant of whether the reader would continue reading the rest of your paper. It should draw the reader’s attention and interest, making them get hipped to continue reading, showing a clear interest in surfing every detail you do include in your paper. Usually, your research paper title is the only aspect of your paper that appears in tables of content and in many of the databases used for literature searches, if you further published your work!<br/>The title of your paper should accurately, completely, and specifically indicate the focus of the paper, with some relevant “keywords” declared. The best to have a perfectly formulated paper title is to reference your hypothesis and experimental variables.<br/></p></details></li></ul><ul id="a4ca03fd-003e-4a28-86b4-e72b24573d55" class="toggle"><li><details open=""><summary><mark class="highlight-brown"><strong>Types of paper titles</strong></mark></summary><ol type="1" id="2b515dcf-8621-442a-b993-bfb80302c64f" class="numbered-list" start="1"><li>Descriptive (The effect of AB antibody on CD virus) stating the main focus of the study</li></ol><ol type="1" id="8901fabf-b3f8-4bf4-bd91-b57b74a31433" class="numbered-list" start="2"><li>Conclusive (AB antibody inhibits CD virus) stating the main conclusion of the study.</li></ol></details></li></ul><ul id="3e5f2d21-424c-40ce-8d5c-9c4df40a11d2" class="toggle"><li><details open=""><summary><mark class="highlight-brown"><strong>General guidelines</strong></mark></summary><ul id="acc5b068-ef4d-4d4e-9a96-53f159b6ab9e" class="bulleted-list"><li style="list-style-type:disc">Avoid using dashes or periods to separate parts of a title.</li></ul><ul id="53652938-5a56-4c7b-a588-f3b245cc5795" class="bulleted-list"><li style="list-style-type:disc">Avoid using abbreviations in titles, since the non-standard abbreviations might be confusing to the readers not familiar to the subject.</li></ul><ul id="b7dc92f9-5905-4214-91bd-f0df5feed9c3" class="bulleted-list"><li style="list-style-type:disc">Omit nonspecific openings such as <em>“Studies of…”.</em></li></ul><ul id="6948d3f7-35e8-455d-bdbc-1531000dfc89" class="bulleted-list"><li style="list-style-type:disc">Omit ambiguous terms such as “with.” This can be replaced with specific terms such as “induced by” or “-mediated”.</li></ul><ul id="1a63590c-d2ee-4e33-8f4c-f7cbf5294a7f" class="bulleted-list"><li style="list-style-type:disc">Avoid making the titles unnecessarily lengthy. Keep it concise.</li></ul></details></li></ul><h3 id="2105754c-0977-4d7e-81be-bf3e4728ced8" class=""><em><mark class="highlight-yellow"><strong>Do necessarily include these points:</strong></mark></em></h3><ul id="d99f9c79-0760-4f6b-bb61-ed2a150e3e9d" class="bulleted-list"><li style="list-style-type:disc">Author name</li></ul><ul id="8fa64af4-a6b0-44a3-b9c4-31ae5eac9fd9" class="bulleted-list"><li style="list-style-type:disc">Author affiliations (University, School, Laboratory, etc.)</li></ul><ul id="35ea194b-efc5-4351-959b-a5056f9159b3" class="bulleted-list"><li style="list-style-type:disc">Corresponding author information</li></ul><h3 id="932fd22c-fedd-4ba5-98d5-a22130a0c0fe" class=""><em><mark class="highlight-yellow"><strong>Optionally include these sections to your title page:</strong></mark></em></h3><ul id="33431133-bedf-485a-aff9-bb5f27598e6f" class="bulleted-list"><li style="list-style-type:disc">Headers – Running title, First Author name</li></ul><ul id="dee17f5c-274c-40f1-901c-e3c8ab53a248" class="bulleted-list"><li style="list-style-type:disc">Footnotes – Grant support, Conflict of Interest, Authorship, Statement of author death</li></ul><ul id="55c3fa2a-0f2b-4bb0-93f3-c3b7fdbd5aef" class="bulleted-list"><li style="list-style-type:disc">Keywords (Also, can be coupled beneath your abstract)</li></ul><ul id="74a8d557-83c5-47fb-a1e3-88eee9bf2e49" class="bulleted-list"><li style="list-style-type:disc">List of Abbreviations (An index to some of the concepts you need to declare for the reader)</li></ul><ul id="63a55c31-488b-41a2-88e3-aaa7ebe3cf11" class="bulleted-list"><li style="list-style-type:disc">Miscellaneous (Word count, article type)</li></ul></div></p><h2 id="5a85bfe4-298c-4304-9969-a21b01057ed4" class=""><mark class="highlight-orange">Abstract</mark></h2><p id="ca9d4476-6d37-4cc3-ad4b-4c5467f3ac21" class="">It is usually a brief of typically 150-300 words that is designed to give an overview of your entire project, in particular its findings and contribution to the field. An abstract should be a standalone summary of your paper, which readers can use to decide whether it&#x27;s relevant to them before they delve in to read the paper.<div class="indented"><h3 id="e37aad46-0bed-4a19-ad91-fbca19ae7fee" class=""><em><mark class="highlight-yellow"><strong>Check points for your abstract formulation </strong></mark></em></h3><ul id="d19becfb-0c1c-4816-b501-ff983935f116" class="bulleted-list"><li style="list-style-type:disc">What is your paper about?</li></ul><ul id="49ff2f69-8031-476c-b538-2ce7962d8e88" class="bulleted-list"><li style="list-style-type:disc">Why is it important?</li></ul><ul id="4172df07-913e-4b1b-98fe-f5ba479befb9" class="bulleted-list"><li style="list-style-type:disc">How did you do it?</li></ul><ul id="47b23d6d-991d-4645-8c34-29009b8b7934" class="bulleted-list"><li style="list-style-type:disc">What did you find?</li></ul><ul id="311ef4fb-496a-4aec-a1d8-9e4a43f6b9bf" class="bulleted-list"><li style="list-style-type:disc">Why are your findings important?</li></ul></div></p><h2 id="477aed52-542c-4bba-9e19-4664759696cf" class=""><mark class="highlight-orange">Introduction</mark></h2><p id="06c9b34f-d184-4e77-a456-36cd505371c5" class="">The purpose of an introduction is to broadly introduce your topic and your key message. The introduction looks slightly different depending on whether your paper presents the results of original empirical research or constructs an argument by engaging with a variety of sources, but whichever you have worked on, your introduction should follow these check-ups points: <div class="indented"><h3 id="1da49a62-375b-4469-9df4-290339d75a66" class=""><em><mark class="highlight-yellow"><strong>Check-up points for your introduction formulation</strong></mark></em></h3><ul id="adc7fe51-7930-4ca2-8cb0-dc5b54c10583" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Introduce the topic of your paper</strong></mark><mark class="highlight-brown">: </mark>The purpose of an introduction is to broadly introduce your topic and your key message. The introduction looks slightly different depending on whether your paper presents the results of original empirical research or constructs an argument by engaging with a variety of sources, but whichever you have worked on, your introduction should follow these check-ups points: </li></ul><ul id="e130ac5f-ed6d-4086-9425-cf1e367ac5f1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Describe your background of your research topic: </strong></mark>In a more argumentative paper, you’ll explore some general background here. In a more empirical paper, this is the place to review previous research and establish how yours fits in.</li></ul><p id="9b210d0a-8898-4372-9d10-1f9c903e2afe" class=""><div class="indented"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="472e920d-5ca6-4b70-b93c-98a7c8279dbe"><div style="font-size:1.5em"><span class="icon">🗒️</span></div><div style="width:100%"><mark class="highlight-brown"><strong>Note:</strong></mark><mark class="highlight-teal"><strong> </strong></mark> You should Provide <strong>only</strong> the most relevant background information in this section, the introduction isn’t the place to get too in-depth; if more background is essential to your paper, it can appear in the body of your paper.</div></figure></div></p><p id="42bf0bf9-1cb9-46f1-b213-78ef7f967a46" class="">
+</p><ul id="3ad38b1e-6526-4e1f-9df7-00d89246b30b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Establish and propose your research problem clearly:</strong></mark><mark class="highlight-brown"> </mark>It basically to clarify how your own research fits in and what problem it addresses. In an argumentative research paper, you can simply state the problem you intend to discuss, and what is original or important about your argument. In an empirical research paper, try to lead into the problem on the basis of your discussion of the literature. Think in terms of these questions: What research gap/gaps is/are your work intended to fill?, What limitations in previous work does it address?, What contributions to knowledge does it make? </li></ul><ul id="7c45d1bc-186e-465e-84f2-93140366cec3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>State your objectives out of this research (Why should the reader delve even deeper in your paper?):</strong></mark><mark class="highlight-brown"> </mark>This section is where the specifics of what you intend to find out or express in your research paper should be proposed. Stating your research topic statement should express the position that the rest of the paper will present evidence and arguments for. It can be presented in one or two sentences, and should state your position clearly and directly, without providing specific arguments for it at this point. Present your research question clearly and directly, with a minimum of discussion at this point, as the rest of the paper will be taken up with discussing and investigating this question even further.</li></ul><ul id="8071bbf5-b8d5-46fc-bf4a-e73b731c4a2b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Map out of your paper: </strong></mark>If your paper is formulated considering the standard scientific “abstract, introduction, methods, results, discussion, etc” format, this isn’t always necessary. But if your paper is structured in a less predictable way, (omitting or adding any other sections that best fits a further boost for your paper to show off) it’s important to describe these transitions for the reader. You should formulate this part of the introduction similar to this way: This paper first discusses…, then goes on to … (this is just an example for the clarification of the idea).</li></ul><h3 id="f8741702-4a24-46fd-9505-2d481c8d1c49" class=""><mark class="highlight-yellow"><strong>An Argumentative introduction sample</strong></mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="50a59c66-9f39-476b-b8ea-d6742b5ac93f"><div style="font-size:1.5em"><span class="icon">✏️</span></div><div style="width:100%"><mark class="highlight-purple_background">Are cows responsible for climate change?</mark> <mark class="highlight-blue_background">A recent study (RIVM, 2019) shows that cattle farmers account for two thirds of agricultural nitrogen emissions in the Netherlands. These emissions result from nitrogen in manure, which can degrade into ammonia and enter the atmosphere. The study’s calculations show that agriculture is the main source of nitrogen pollution, accounting for 46% of the country’s total emissions. By comparison, road traffic and households are responsible for 6.1% each, the industrial sector for 1%.</mark> <mark class="highlight-orange_background">While efforts are being made to mitigate these emissions, policymakers are reluctant to reckon with the scale of the problem. The approach presented here is a radical one, but commensurate with the issue.</mark> <mark class="highlight-teal_background">This paper argues that the Dutch government must stimulate and subsidize livestock farmers, especially cattle farmers, to transition to sustainable vegetable farming.</mark> <mark class="highlight-pink_background">It first establishes the inadequacy of current mitigation measures, then discusses the various advantages of the results proposed, and finally addresses potential objections to the plan on economic grounds.</mark></div></figure><h3 id="1e3d0936-57b4-48f7-bd59-c1f167c4f8d1" class=""><mark class="highlight-yellow"><strong>An Empirical introduction sample</strong></mark></h3><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="13ffef5d-6e12-430d-9a5d-5042fa651414"><div style="font-size:1.5em"><span class="icon">✒️</span></div><div style="width:100%"><mark class="highlight-gray_background">The rise of social media has been accompanied by a sharp increase in the prevalence of body image issues among women and girls.</mark> <mark class="highlight-orange_background">This correlation has received significant academic attention: Various empirical studies have been conducted into Facebook usage among adolescent girls (Tiggermann &amp; Slater, 2013; Meier &amp; Gray, 2014). These studies have consistently found that the visual and interactive aspects of the platform have the greatest influence on body image issues. Despite this, highly visual social media (HVSM) such as Instagram have yet to be robustly researched.</mark> <mark class="highlight-teal_background">This paper sets out to address this research gap.</mark> <mark class="highlight-pink_background">We investigated the effects of daily Instagram use on the prevalence of body image issues among adolescent girls. It was hypothesized that daily Instagram use would be associated with an increase in body image concerns and a decrease in self-esteem ratings.</mark></div></figure></div></p><h2 id="074d65f4-75f1-4e65-8dc9-6b9ecec3b658" class=""><strong><mark class="highlight-orange">Literature Review</mark></strong></h2><p id="5af642cf-6681-45f2-928f-4b1559c2a664" class="">This section is considered your warehouse source to your own arguments in the paper. Basically, it is a collective section for all of your precious work you have been searching for. Literature Reviews help readers understand what is known about a topic without having to find and read through multiple sources. In addition, they provide you helpful background and context. Literature reviews can also help you learn about a given topic while in the process of preparing the review itself. In the act of research and writing the literature review, you gain expertise on the topic. Pursuing to formulate a research paper, you should make use of every word you read throughout your journey of research, the reason why the Literature Review section is such important to formulate following these guidelines:<div class="indented"><h3 id="7c12a106-7aa4-4a41-b1e4-7869f2ab1169" class=""><em><mark class="highlight-yellow"><strong>I. Identify and define the topic you will be reviewing</strong></mark></em></h3><p id="075fcd6f-5301-41ef-8372-ff8741223d07" class="">The topic, which is commonly a research question (or problem) of some kind, needs to be identified and defined as clearly as possible. You need to have an idea of what you will be reviewing in order to effectively search for references and to write a coherent summary of the research on it. At this stage it can be helpful to write down a description of the research question, related area, or topics that you will be reviewing, as well as to identify any keywords that you will be using to search for relevant research.</p><h3 id="58dd682a-73e6-4d66-b685-5fbeb7b3d28b" class=""><em><mark class="highlight-yellow">II. C</mark></em><em><mark class="highlight-yellow"><strong>onduct a literature search</strong></mark></em></h3><p id="7dfd13b5-6d57-4897-b6f3-aed5e18e4166" class="">Use a range of keywords to search databases that may contain relevant articles. You should focus on peer-reviewed and scholarly articles. Published books may also be helpful, but keep in mind that peer-reviewed articles are widely considered in scientific research. Read through titles and abstracts, select and obtain articles (that is, download, copy, or print them out), and save your searches as needed.</p><h3 id="927c00e5-573f-494f-a0d4-18fa345bd06d" class=""><em><mark class="highlight-yellow">III. </mark></em><em><mark class="highlight-yellow"><strong>Read through the research you have gathered and never forget to take notes</strong></mark></em></h3><p id="36eb8831-c2c5-448e-bc47-c93e6a70f916" class="">Absorb as much information as you can. Read through the articles and books that you have found, and as you do, take notes. The notes should include anything that will be helpful in advancing your own thinking about the topic and in helping you write the literature review (such as key points, ideas, or even page numbers that index key information). Some references may turn out to be more helpful than others; you may notice patterns or striking contrasts between different sources; and some sources may refer to yet other sources of potential interest. This is often the most time-consuming part of the review process. However, it is also where you get to learn about the topic in great detail.</p><h3 id="82460c93-780a-4697-929e-bbaa0e84b7bf" class=""><em><mark class="highlight-yellow">IV. </mark></em><em><mark class="highlight-yellow"><strong>Create an outline</strong></mark></em></h3><p id="4a460d92-5fe2-47d9-8f17-a7cbd529fb6b" class="">At this stage, you are close to writing the review itself. However, it is often helpful to first reflect on all the reading that you have done. What patterns stand out? Do the different sources converge on a consensus? Or not? What unresolved questions still remain? You should look over your notes (it may also be helpful to reorganize them), and as you do, do think about how you will present this research in your literature review. Are you going to summarize or critically evaluate all this harvest? Are you going to use a chronological or other type of organizational structure?</p><h3 id="b2356225-db4d-439e-93b0-eff6b7a01357" class=""><em><mark class="highlight-yellow">V. </mark></em><em><mark class="highlight-yellow"><strong>Write the literature review itself (what you have written) and edit and revise as needed</strong></mark></em></h3><p id="b875f47d-7e24-40a7-bb78-d277c5c94a6f" class="">The final stage involves writing. When writing, keep in mind that literature reviews are generally characterized by a <em>summary style</em> in which prior research is described sufficiently to explain critical <br/>findings but does not include a high level of detail (if readers want to learn about all the specific details of a study, then they can look up the references that you cite and read the original articles themselves).  However, the degree of emphasis that is given to individual studies may vary (more or less detail may be warranted depending on how critical or unique a given study was). After you have written your draft, you should read it carefully and then edit and revise as needed.<br/></p><h3 id="3ea4ffc2-83dc-4fd6-8bfc-35aa2eb2ff5d" class=""><em><mark class="highlight-yellow">VI. </mark></em><em><mark class="highlight-yellow"><strong>Incorporate the final Literature Review to your paper draft</strong></mark></em></h3><p id="9c16e14d-9c0e-474a-bee4-36d83030ebe1" class="">After the literature review is complete, you should incorporate it into your research paper (if you are writing the review as one component of a larger paper), if not, just submit it where it is required.</p></div></p><h2 id="d6fb2c0b-f834-4ce7-926d-1be7cb7408e2" class=""><mark class="highlight-yellow"><strong>Methods</strong></mark></h2><p id="9127cc13-3646-4291-9aa9-ae204fbaa9fe" class="">“<em>How have you reached your findings</em>?”, this section is mainly designed to let you gate the reader throughout your hands on work. In other words, what steps, data, materials, etc. have you relied on to come up with a final statement regarding the question you are/were willing to answer. It typically features a description of the participants/subjects that were involved, the study design, the materials that were used, and the study procedure. Although all these can be clarified in one-paragraph style, you are required to specify the type of data you are willing to gather, thus the tracked steps and procedures you do follow to later showcase the success of your hypothesis statement.<div class="indented"><h3 id="fd220dc2-066b-499a-b35e-5f7a45f59e87" class=""><em><mark class="highlight-yellow"><strong>Data Collection methods:</strong></mark></em></h3><p id="5a386fca-5857-47b8-a029-1c00881dd7c2" class=""><mark class="highlight-brown"><strong>Quantitative methods Research:</strong></mark><strong> </strong>This methodology is for a research that relies on measuring variables using a numerical system, analyzing these measurements using any of a variety of statistical models, and reporting relationships and associations among the studied variables.<div class="indented"><p id="01ec8da9-e02f-4161-8f85-f219944759f5" class=""><strong>Techniques of quantitative methodology include:</strong></p><ul id="38ccabbb-5b9e-47cd-8391-f31094538d83" class="toggle"><li><details open=""><summary>Experiments</summary><p id="545b0a9f-bb36-4c17-aa66-bee82eed4f35" class="">Share full details of the tools, techniques, and procedures you used to conduct your experiment.</p><ul id="f6d73024-55ac-4fbd-86a9-40b055ec1c4b" class="bulleted-list"><li style="list-style-type:disc">How did you design the experiment?</li></ul><ul id="02b55a7e-bf4e-424c-aab7-10ba5102b8ab" class="bulleted-list"><li style="list-style-type:disc">How did you recruit participants (if required)?</li></ul><ul id="199af3f0-1db9-4c53-8f77-fd1c5da69d2e" class="bulleted-list"><li style="list-style-type:disc">How did you manipulate and measure the variables (Set them at first)?</li></ul><ul id="311bec85-188b-4e7c-90c8-837fad3b8f2f" class="bulleted-list"><li style="list-style-type:disc">What tools did you use?</li></ul><ul id="8fe1d1ba-dfe5-4545-bb3f-b75ebd227ef9" class="bulleted-list"><li style="list-style-type:disc">What was your time frame?</li></ul><ul id="435ded7b-1a8c-4074-a33a-f0cc35a6e083" class="bulleted-list"><li style="list-style-type:disc">What were some failures or negatives you faced and could tackle?</li></ul></details></li></ul><ul id="bbafd765-2a59-44f5-82f2-7b860ab61b02" class="toggle"><li><details open=""><summary>Analysis of existing data</summary><p id="e938c556-65f5-4547-b1e4-498c81f2c878" class="">Explain how you gathered and selected the material (such as datasets) that you used in your analysis.</p><ul id="cd61687e-388b-4c38-b912-a9817069d8d8" class="bulleted-list"><li style="list-style-type:disc">Where did you source the material?</li></ul><ul id="f14b0908-638e-4541-8565-1c11ebc8662a" class="bulleted-list"><li style="list-style-type:disc">How was the data originally produced (somehow a literature review, but less detailed)?</li></ul><ul id="5e1190c8-9fb4-4bd6-aeb3-5b504961e268" class="bulleted-list"><li style="list-style-type:disc">What criteria did you use to select material (did you have a check list?)?</li></ul></details></li></ul><ul id="e42026ad-bd0d-4885-95f6-beb6e41af4ac" class="toggle"><li><details open=""><summary>Surveys</summary><p id="a9a10feb-3397-4fef-99d0-413cbe07097a" class="">Describe where, when, and how you have conducted the survey.</p><ul id="f2a0cc8e-2456-4217-8684-16149f015ea2" class="bulleted-list"><li style="list-style-type:disc">How did you design your questionnaire?</li></ul><ul id="ccc4f1ab-b78a-401e-911e-49c43e97e985" class="bulleted-list"><li style="list-style-type:disc">What form did your questions take (MCQ, short answers, etc.)?</li></ul><ul id="4c3a4305-2409-44fe-8fbe-be05a7fc0285" class="bulleted-list"><li style="list-style-type:disc">Were your surveys conducted in-person or virtually?</li></ul><ul id="f969e73c-39cd-4a05-b716-6b3add35ed39" class="bulleted-list"><li style="list-style-type:disc">How did you choose your study participants?</li></ul><ul id="92403ec1-4354-4ac7-b785-9acef47bafd5" class="bulleted-list"><li style="list-style-type:disc">How is your participants sample set range classified?</li></ul><ul id="c8d80c4f-c804-42b2-99b8-79a11a8af6bf" class="bulleted-list"><li style="list-style-type:disc">What was your sample set size and response rating criteria?</li></ul></details></li></ul></div></p><p id="67a64cad-c4df-4c23-987a-a2af80c72d78" class=""><mark class="highlight-brown"><strong>Qualitative methods Research: </strong></mark>This methodology is for a research that produces descriptive (non-numerical) data, thus it’s often more flexible and subjective despite the status of the quantitative methods generally.<div class="indented"><p id="1063c781-563c-4d43-a6d7-b94452100667" class=""><strong>Techniques of qualitative methodology include:</strong></p><ul id="504a7eeb-358c-4bf5-9de4-b6e8f952a548" class="toggle"><li><details open=""><summary>Interviews and focus groups</summary><p id="69ebad7d-ec80-41df-95a7-6e672e289211" class="">This is mostly a technique used to support findings of a social science field, e.g. psychology. It is comprised of a set of questions that follow a specific theme via the interviewer to a specific set of interviewee, under controlled conditions, and then all of their responses get recorded to be later analyzed by the interviewer, who is in most of the cases the author him/herself.</p><p id="5aa3c67a-0abb-444d-9a6e-d7ff514e4b4d" class="">Before you decide to choose (Interviews) as your way of gathering your data, you should do consider:</p><ul id="2fd84232-6950-45d6-9e98-dcd26061e3a8" class="bulleted-list"><li style="list-style-type:disc">The number of interviewees you are including in your study.</li></ul><ul id="d8da5776-2d19-4d1f-ab27-89a00109397e" class="bulleted-list"><li style="list-style-type:disc">The conditions you are going to immerse your interviewees in.</li></ul><ul id="cd3f15ff-978e-4a4c-828a-7f5444d13e43" class="bulleted-list"><li style="list-style-type:disc">The status of your interviews (Casual or structured).</li></ul><ul id="33bf0956-04d7-4f1b-9228-afe8dfe38b53" class="bulleted-list"><li style="list-style-type:disc">The time you are fixing for your interviewees, or you are flexible with this</li></ul><p id="9d067722-8d68-4a79-ad88-a4f20b83d98b" class="">All these considerations require your <strong>OWN</strong> choices, based on the topic theme you are going to work on, thus do never hesitate to discuss these points in a more personalized way with your mentor.</p></details></li></ul><ul id="afb11396-29fb-48c3-bf09-fb6c7b52bc70" class="toggle"><li><details open=""><summary>Behavioral observations</summary><p id="b749383c-923f-4b30-9bb4-919921610b56" class="">This way relies on the conditions you set up and the exhibition of behaviors of the those who you conduct the experiment on. Before proceeding in this technique, you should have a clear vision about:</p><ul id="9b0f199e-0598-493d-8b09-18a8028e95f6" class="bulleted-list"><li style="list-style-type:disc">What group or community are you observing? </li></ul><ul id="ab489def-29ec-4bc5-83a3-76be9ff2935c" class="bulleted-list"><li style="list-style-type:disc">How long will your experiment be?</li></ul><ul id="8659235a-7f86-4da4-bc14-a06320921d5b" class="bulleted-list"><li style="list-style-type:disc">How long are you going to spend conducting the research? </li></ul><ul id="dbf1bf2b-add5-4cd3-8f5a-f54eac814c03" class="bulleted-list"><li style="list-style-type:disc">Where are you going to conduct this research?</li></ul><ul id="a3abc915-1e0b-4e1f-9e52-2d9abe595af0" class="bulleted-list"><li style="list-style-type:disc">What is your technique in gathering and exhibiting data (audio and visual recordings, note-taking)?</li></ul></details></li></ul><ul id="e5bb8f58-6931-41f7-bbb2-20bba1dc2b13" class="toggle"><li><details open=""><summary>Existing data customization</summary><p id="2ba9c620-5d75-4c89-9746-031f6af603ad" class="">This way is mostly related to the materials choice you do make throughout your journey in gathering the most appropriate findings to your very first research hypothesis, you should explain reasonably how did you choose the appropriate materials for your study analysis. So, it is always preferred to have these two questions as your guide to reference:</p><ul id="9dc54178-dbe9-4866-8f41-f2ee55160ad4" class="bulleted-list"><li style="list-style-type:disc">What type of materials did you analyze?</li></ul><ul id="6abd70e8-3746-4908-9dbc-3caa5584f21f" class="bulleted-list"><li style="list-style-type:disc">How did you select them?</li></ul></details></li></ul></div></p><p id="953cf6cd-63a2-48f9-8d09-002944f7372b" class=""><mark class="highlight-brown"><strong>Mixed methods research: </strong></mark>This type of data collection combines quantitative and qualitative methods altogether. It’s usually considered when it is no more sufficient to just rely on either the quantitative or the qualitative alone, thus you became in need to have a combined argument from both types. Following this mixed technique, it is more likely to end up your methods exhibiting a strong, integral approach to what have been done with a net persuasive conclusion for the entire procedure.</p></div></p><h2 id="2e2c2ded-e9c9-4b72-b66d-137c32956fb4" class=""><mark class="highlight-orange"><strong>Results</strong></mark></h2><p id="5217d133-d561-4360-a1df-fc0538e54f59" class="">This is the fruit of your paper, in other words, it is the place where you present your study findings in the most appropriate way you can ever have. Whatever the way you choose to present your study findings, you should always consider these points while articulating the context of your results section:</p><ul id="a505ff0b-e236-4281-8110-cf1a3c725312" class="bulleted-list"><li style="list-style-type:disc">Deal with the Results section the same you did with the conclusion, making it expressive on its own, with no need to have additional section to understand its context.</li></ul><ul id="0824a0f8-1c7b-4ee1-853f-1e6f273b1fb4" class="bulleted-list"><li style="list-style-type:disc">Present your data coupled with a statement description for an easier clarification.</li></ul><ul id="af97c6cd-4e2a-4c4f-a0e0-73431f44e969" class="bulleted-list"><li style="list-style-type:disc">Be concise, using non-textual elements, such as figures and tables, if appropriate, to present results more effectively.</li></ul><ul id="01943c8a-5f91-46fa-9b8e-7a81a6c59a19" class="bulleted-list"><li style="list-style-type:disc">You are not required to prove anything, thus stay unbiased and present the entire sets of data you have without omitting or manipulating any subset.</li></ul><ul id="64de5fe6-ccc3-47ff-8f9f-3c7ac1156c61" class="bulleted-list"><li style="list-style-type:disc">You may rely on some non-textual additions like the figures, tables, charts, etc.</li></ul><ul id="62194be1-7b7c-4e0e-8bbf-a45ea8899c47" class="bulleted-list"><li style="list-style-type:disc">Do never forget to mention(in numbered order) the non-textual additions you supplied within the textual content of your results (Table 1, Chart 2, Map 3, etc).</li></ul><ul id="1661a0bd-df97-41ff-b13b-cb43e4343e51" class="bulleted-list"><li style="list-style-type:disc">Each non-textual element must be titled, numbered consecutively, and complete with a heading.</li></ul><ul id="e6aa95a8-191f-49e8-a91d-e7424f95e9e1" class="bulleted-list"><li style="list-style-type:disc">Do include your primitive negative results if you faced some, their cancellation from your context (if found) is never something positive to you (neither negative).</li></ul><h2 id="7fb037c4-4f39-4da9-8202-bf33b52bc65c" class=""><mark class="highlight-orange"><strong>Discussion</strong></mark></h2><p id="73104737-fd88-4937-ac4e-4161cc3b7067" class=""><em>What is the significance of your results?</em> <strong>– </strong>the final major section of text in the paper. In this section, you do present a subjective linkage between your investigation goal of your study and the findings you got out of your study methodology. In this section, you should also include two sub sections, which would help others do expand the extent of your study: The project’s future limitations and the projects future recommendations for further development in the final argued findings.</p><p id="b52675ab-38ab-4004-a745-3090a583fbda" class=""><mark class="highlight-brown"><strong>In a summarized way, you should somehow include these points within your discussion:</strong></mark></p><ul id="931609b6-013e-4d0e-8d49-e59dfd38bfb7" class="bulleted-list"><li style="list-style-type:disc">The significance of your study findings.</li></ul><ul id="6389fca0-eb69-4d32-a3c6-cdc846c7d796" class="bulleted-list"><li style="list-style-type:disc">Your arguments that links your research question and the claimed data.</li></ul><ul id="a26844c7-a82a-4646-9719-1848395a2813" class="bulleted-list"><li style="list-style-type:disc">Current limitations (and proposed future obstacles) of your study topic.</li></ul><ul id="2d35a0f9-82e0-430d-b17c-2f60e105a25e" class="bulleted-list"><li style="list-style-type:disc">Your future additions (Recommendations to further enhance the study findings).</li></ul><h2 id="5a6c191a-6721-4f9f-a812-c1c9b82ea8e3" class=""><mark class="highlight-orange"><strong>Conclusion</strong></mark></h2><p id="b060df82-beaa-46ca-8721-6c4b6ceee4c2" class="">This is a 1-2 paragraph (80 to 220 words) section that you should design in a way that brings everything together in a logical manner to the reader (Funnel down your findings’ significance). As the last part of your research paper, you should provide inside of it a clear interpretation of your findings in a way that stresses their significance. In other words, try to emphasize and propose an answer to a (Why do your findings matter?) question to the reader.</p><h2 id="403a0d40-3621-4bcb-b518-2b7816cba339" class=""><mark class="highlight-orange"><strong>References</strong></mark></h2><p id="d3a8e314-78f3-4609-aded-59973dfd7295" class="">The Reference list provides information for readers who may want to access the sources you cite in your paper. The Reference page is located at the end of your paper. Start a new page and title your list Reference. Then list in <strong>alphabetical order</strong> all the sources that you have cited in the paper.<div class="indented"><h3 id="6ad4eea8-24f0-4dc4-b50e-ec49510a895c" class=""><em><mark class="highlight-yellow">Information to provide</mark></em></h3><ul id="a1966d2b-7dbf-42cd-9215-f75a6db335c5" class="bulleted-list"><li style="list-style-type:disc">Author&#x27;s name (if known)</li></ul><ul id="d90ad098-08b6-4df9-a44b-25d1974ded29" class="bulleted-list"><li style="list-style-type:disc">Date of publication or last revision (if known), in parentheses (year, month, day)</li></ul><ul id="02a470c4-23b9-4443-9ca5-26667f09a8dd" class="bulleted-list"><li style="list-style-type:disc">Title of document or article</li></ul><ul id="5b9cb35b-8357-40ba-82a5-37bbcd02537e" class="bulleted-list"><li style="list-style-type:disc">Title of complete work (if applicable), italicized</li></ul><ul id="8d20d2da-8ec1-4def-9075-f1bf444ba3e4" class="bulleted-list"><li style="list-style-type:disc">The word “from” followed by the URL</li></ul><h3 id="74847a74-bc27-492d-8f0c-1a56605654d5" class=""><em><mark class="highlight-yellow">General guidelines</mark></em></h3><ul id="06d293be-448c-4e52-acb6-842101417523" class="bulleted-list"><li style="list-style-type:disc">Organize your Reference page by the last names of the authors (or editors).</li></ul><ul id="7b639116-e98f-4945-af89-2c8443e03a0c" class="bulleted-list"><li style="list-style-type:disc">“References” is centered at the top of the page.</li></ul><ul id="dffb8125-555b-4bea-8416-fac258377ece" class="bulleted-list"><li style="list-style-type:disc">Double spacing is used throughout.</li></ul><ul id="5e39e642-654c-44d5-b019-83aadd8e624e" class="bulleted-list"><li style="list-style-type:disc">Use a hanging indent, so that the first line is at the margin and all following lines are indented.</li></ul><ul id="a83d8204-da1f-49dc-883e-ddfd2f260db4" class="bulleted-list"><li style="list-style-type:disc">If a work has no author or editor, alphabetize by the first word of the title other than <em>a, an,</em> or<em> the.</em></li></ul><h3 id="7cbbddaa-f35a-47b6-acc8-c4aca2a887bb" class=""><em><mark class="highlight-yellow">Samples</mark></em></h3><ul id="e8a79c9f-751f-49a7-bda5-4b5d558aae1f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Citing an online www</strong></mark><mark class="highlight-brown">: </mark>Harris, J. G. The return of the witch hunts. <em>Witchhunt Information Page</em>. Retrieved May 28, 1996, from &amp;lt;http://liquid2-sun.mit.edu/fells.short.html&amp;gt;.</li></ul><ul id="291ba9fc-4efb-41d2-9fdb-b054778cc142" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Citing a Journal</strong></mark><mark class="highlight-brown">: </mark>Gibbons, A. (1991). Déjà vu all over again: Chimp-language wars. <em>Science</em>, 251,1561-1562.</li></ul><ul id="59efcbf3-9bd4-4b94-868b-5bf3ea722dc8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Citing a newspaper</strong></mark><mark class="highlight-brown">: </mark>Booth, W. (1990, October 29). Monkeying with language: Is chimp using words or merely aping handlers? <em>The Washington Post</em>, p. A3.</li></ul><ul id="96860409-6bde-4ee3-8fa8-2386e5d5dbd1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong><strong><strong><strong><strong><strong><strong>Citing a book</strong></strong></strong></strong></strong></strong></strong></mark><mark class="highlight-brown">: </mark>Leakey, R., &amp; Lewin, R. (1992). <em>Origins reconsidered: In search of what makes us human</em>. New York: Doubleday.</li></ul><ul id="448e0df0-b98d-4215-acea-941befcf2a4d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Citing a magazine</strong></mark><mark class="highlight-brown">: </mark>Lewin, R. (1991, April 29). Look who&#x27;s talking now. <em>New Scientist</em>, 130, 49-52.</li></ul><ul id="29586dfe-6c48-41f3-8361-95c62d75d4c7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Citing a video</strong></mark><mark class="highlight-brown">:</mark> National Geographic Society (Producer). (1987). <em>In the Shadow of Vesuvius</em> [Videotape]. Washington, DC: National Geographic Society.</li></ul></div></p><h2 id="475476aa-3ee7-4be8-88d7-dd7bf187d718" class=""><mark class="highlight-orange"><strong>Acknowledgments</strong></mark></h2><p id="88aec2df-7cfe-4070-abd1-2d320ec9af20" class="">The <strong>acknowledgements section</strong> is your opportunity to thank those who have helped and supported you personally and professionally. In your acknowledgements, it’s okay to use a more informal style than is usually permitted in academic writing, as well as first-person pronoun. Acknowledgements are not considered part of the academic work itself, but rather your chance to write something more personal.<div class="indented"><h3 id="cd8f7aac-e07e-4e57-ba09-53a49b5e7797" class=""><em><mark class="highlight-yellow">Who to thank (From more to less important)</mark></em></h3><ul id="ba2583b6-a34e-489b-9bbd-d2e440494ddc" class="bulleted-list"><li style="list-style-type:disc">Mentor, supervisors, or defense committees</li></ul><ul id="c193fc5c-843f-406f-8543-bcd1861ecf4b" class="bulleted-list"><li style="list-style-type:disc">Funding bodies</li></ul><ul id="9e54d902-a9e4-423a-ba50-26652dc8e4f9" class="bulleted-list"><li style="list-style-type:disc">Other academics (Colleagues or cohort members)</li></ul><ul id="4d938c3b-a04e-4c44-93e5-3b422c4911bc" class="bulleted-list"><li style="list-style-type:disc">Editors or proofreaders</li></ul><ul id="4bd99769-88aa-4e55-a80c-8b5f90ac86d7" class="bulleted-list"><li style="list-style-type:disc">Librarians, research/laboratory assistants, or study participants</li></ul><ul id="4031d287-25f8-4705-9371-0419fa4bd0df" class="bulleted-list"><li style="list-style-type:disc">Family and/or friends</li></ul><h3 id="3c89c0cc-fa3c-4211-b779-3210c4431a07" class=""><em><mark class="highlight-yellow">General guidelines</mark></em></h3><ul id="a9818215-664f-4886-9d0b-5fee1ef5728c" class="bulleted-list"><li style="list-style-type:disc">Even if you feel your chair didn’t help you very much, you should still thank them first to avoid looking like you’re snubbing them.</li></ul><ul id="f8aa750b-914d-45aa-b7c5-214f8f27b879" class="bulleted-list"><li style="list-style-type:disc">Write in first-person, professional language.</li></ul><ul id="0a228af4-9125-4f14-9cd2-3dd24f123efe" class="bulleted-list"><li style="list-style-type:disc">Do never use informal language or slang.</li></ul><ul id="3468e19d-a0ff-43e2-840a-97eb698ae224" class="bulleted-list"><li style="list-style-type:disc">Be sure to follow academic conventions, using full names with titles where appropriate.</li></ul><ul id="6ef4a75e-1959-4d6d-8fea-3697e0fbfd95" class="bulleted-list"><li style="list-style-type:disc">If several members of a group or organization assisted you, mention the collective name only.</li></ul><ul id="d4c0c799-0af5-4b8a-87d4-1d327167aba1" class="bulleted-list"><li style="list-style-type:disc">Do not go over one page in length.</li></ul><ul id="4d41d316-cc37-45a4-af62-b473f85dbbfc" class="bulleted-list"><li style="list-style-type:disc">If you wish to protect someone’s privacy, use only their first name or a generic identifier (such as “the interviewees”).</li></ul><ul id="1f6a5323-84fd-4ead-83a5-e190db92321c" class="bulleted-list"><li style="list-style-type:disc">Do not mention people who had only a peripheral or minor impact on your work.</li></ul></div></p><h2 id="b75919ae-4dc4-481c-9464-71e3e8d1aa07" class=""><mark class="highlight-orange"><strong>Appendix</strong></mark></h2><p id="0ee37111-4b73-41ae-9ce6-03f6dccf6146" class="">This is an <strong>Optional</strong> section that you may need to have in your paper in some cases; it is basically found to help you supply additional information that was not that crucial to take place in the main body of your research context, however you feel confident they would somehow broaden the extent of the reader’s understanding of your theme. Sections you may include in your paper appendix may include:</p><ul id="1a673b1b-3505-401b-8c94-15ea1a23d6ee" class="bulleted-list"><li style="list-style-type:disc">Experimental simulations</li></ul><ul id="736f7abd-0d0d-46e3-a9c8-d0b8b595e3df" class="bulleted-list"><li style="list-style-type:disc">Details of a secondary study analysis</li></ul><ul id="ba9cd392-c551-43bf-ad67-db1c2299a819" class="bulleted-list"><li style="list-style-type:disc">A programming code</li></ul><p id="fe47cd75-3fe5-407c-8af6-dcb556c433a9" class="">
+</p><p id="a058a946-2391-4252-9a15-f8ebd82c4db8" class="">In conclusion, the structures of every research paper vary depending on the context of your paper, the type of the paper, and the purpose of the paper, among other factors that you should determine with your mentor. However, some components MUST exist within your table of contents. In other words, your paper should arguably include these sections: Title page, Abstract, Introduction, Methods, Results, Discussion, and References sections.</p><hr id="f847c8f0-fc01-4b96-97ca-23a5af91fcf5"/><h2 id="77eee7fc-b922-4fcc-b483-cbda87d1d499" class=""><mark class="highlight-orange">References/Further Reading:</mark></h2><figure id="ca9cadf8-ca55-4493-bc21-021e67f989a9"><a href="https://psychology.ucsd.edu/undergraduate-program/undergraduate-resources/academic-writing-resources/writing-research-papers/research-paper-structure.html#Appendix" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Research Paper Structure</div></div><div class="bookmark-href"><img src="https://psychology.ucsd.edu/favicon.ico" class="icon bookmark-icon"/>https://psychology.ucsd.edu/undergraduate-program/undergraduate-resources/academic-writing-resources/writing-research-papers/research-paper-structure.html#Appendix</div></div></a></figure><figure id="3e02f0a2-124a-40c2-a1d1-97fe3fe24b66"><a href="https://www.scribbr.com/research-paper/research-paper-introduction/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Writing a Research Paper Introduction | Step-by-Step Guide</div><div class="bookmark-description">The introduction to a research paper is where you set up your topic and approach for the reader. It has several key goals: Present your topic and get the</div></div><div class="bookmark-href"><img src="https://www.scribbr.com/android-chrome-192x192.png" class="icon bookmark-icon"/>https://www.scribbr.com/research-paper/research-paper-introduction/</div></div><img src="https://www.scribbr.com/wp-content/uploads/2023/03/Writing-a-research-paper-introduction-preview.webp" class="bookmark-image"/></a></figure><p id="41d4b01f-8b9a-4d66-80af-57b86687a296" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Executing your Methodology: Obtaining Results and Reporting them Correctly</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1b2e41d9-a416-4f6e-a1e3-e74d1522a0a7" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 53.53%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🔬</span></div><h1 class="page-title">Executing your Methodology: Obtaining Results and Reporting them Correctly</h1><p class="page-description"></p></header><div class="page-body"><h2 id="cd927745-545b-47ff-9244-ee6807aa6b7f" class=""><mark class="highlight-orange">Methods of Data Collections</mark></h2><h3 id="9bd47671-b2cb-46c7-9509-8c7c8cb36a74" class=""><em><mark class="highlight-yellow">Qualitative vs. quantitative data</mark></em></h3><p id="031b78e6-0314-49e1-be7b-f4651c27fa5a" class="">Depending on the kind of knowledge you want to generate, you should choose either qualitative or quantitative data collection.</p><table id="99d4cfb2-6911-49a9-8e02-cecbb09454d2" class="simple-table"><thead class="simple-table-header"><tr id="51788890-8e68-4002-933c-50871da31dc5"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px"></th><th id="}sqo" class="simple-table-header-color simple-table-header" style="width:302px">Pros</th><th id="Do\E" class="simple-table-header-color simple-table-header" style="width:300px">Cons</th></tr></thead><tbody><tr id="e00d2883-ee0d-41f9-bdc6-84d3c689c08c"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Qualitative</th><td id="}sqo" class="" style="width:302px">Can be done with small samples; • Flexible—you can frequently modify your procedures as you go to get new insights.</td><td id="Do\E" class="" style="width:300px">Cannot be statistically analyzed and is not generalizable to larger populations. <br/><br/>Hard to standardize, increasing the chance of bias in studies.<br/></td></tr><tr id="23d09691-a90f-480f-ab19-273821c70145"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Quantitative</th><td id="}sqo" class="" style="width:302px">Produces reproducible knowledge.<br/><br/>Can be used to systematically characterize enormous collections of objects.<br/></td><td id="Do\E" class="" style="width:300px">Requires training in statistics to analyze data. <br/><br/>Demands bigger samples.<br/></td></tr></tbody></table><p id="4c017e20-1f82-41c4-a6c3-e5096f46354e" class="">You can also employ both qualitative and quantitative research techniques in a mixed methodologies approach.</p><h3 id="a96d9cae-5d70-486a-8960-f8f35c6aef58" class=""><em><mark class="highlight-yellow">Primary vs. secondary research</mark></em></h3><p id="51a74bf5-a9e3-4f19-91ea-d1367193fb3b" class="">Any original data that you independently gather to address your research issue (e.g., through surveys, observations, and experiments) is considered primary research. The data used in secondary research has already been gathered by another researcher (for example, through a government census or earlier scientific investigations).</p><p id="f920f74e-df6c-4048-bb10-191da4640bcd" class="">Primarily collected data will probably be required if you are investigating a fresh study subject. However, secondary data might be a preferable option if you wish to combine existing knowledge, examine past trends, or uncover patterns on a big scale.</p><table id="c7716fc2-3142-4f63-89e4-a775864c87ed" class="simple-table"><thead class="simple-table-header"><tr id="1a7d2eae-94fc-4683-ba53-bab50fb7b912"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px"></th><th id="}sqo" class="simple-table-header-color simple-table-header" style="width:302px">Pros</th><th id="Do\E" class="simple-table-header-color simple-table-header" style="width:300px">Cons</th></tr></thead><tbody><tr id="6cfc318c-05ca-49e6-9718-fc4c390c4fc7"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Primary</th><td id="}sqo" class="" style="width:302px">Can be gathered to address a particular research question of yours. <br/><br/>The sampling and measuring techniques are in your hands.<br/></td><td id="Do\E" class="" style="width:300px">Requires expertise in data collection techniques. <br/><br/>Costlier and longer to collect.<br/></td></tr><tr id="9c724d4b-bc8a-4737-afe4-f17355d4a9c1"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Secondary</th><td id="}sqo" class="" style="width:302px">You may gather data that cover longer durations and more geographical areas. <br/><br/>It is simpler and quicker to obtain.<br/></td><td id="Do\E" class="" style="width:300px">No control over how the data were produced. <br/><br/>Requires additional processing to ensure that it is suitable for your analysis.<br/></td></tr></tbody></table><h3 id="e36c910d-e729-46c5-9c71-ec27a23ae1a1" class=""><em><mark class="highlight-yellow">Descriptive vs. experimental data</mark></em></h3><p id="68718b3c-6ae0-46dc-9640-a37024f16cc5" class="">You gather information about your study topic in a descriptive study without getting involved. The sampling technique you use will determine how valid your study is.</p><p id="472160bf-86e8-40cb-8e93-258537768762" class="">When conducting experimental research, you deliberately interfere with a process and track the results. Your experimental design will determine how valid your research is.</p><p id="0bf48ac9-a947-4703-a486-b303efb8c6aa" class="">You must be able to change your independent variable, correctly measure your dependent variable, and account for confounding variables in order to conduct an experiment. This approach offers the most reliable solutions to concerns about causation and effect when it is both practically and morally feasible.</p><table id="5eb4d4fb-e4f1-4b03-93f0-e13219b90ffc" class="simple-table"><thead class="simple-table-header"><tr id="f3540945-da77-4db5-9399-37961207728e"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px"></th><th id="}sqo" class="simple-table-header-color simple-table-header" style="width:302px">Pros</th><th id="Do\E" class="simple-table-header-color simple-table-header" style="width:300px">Cons</th></tr></thead><tbody><tr id="ac13b6ec-5ca5-451f-bd29-cc602e6ce217"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Descriptive</th><td id="}sqo" class="" style="width:302px">Let you describe your research topic without having any bearing on it. <br/><br/>Accessible — a greater scale allows you to collect more data.<br/></td><td id="Do\E" class="" style="width:300px">There is no way to control confounding factors. <br/><br/>No way to prove causation.<br/></td></tr><tr id="5f669648-1c04-4c77-8180-ff372b38ecd5"><th id="dMmW" class="simple-table-header-color simple-table-header" style="width:117px">Experimental</th><td id="}sqo" class="" style="width:302px">More control over potentially confusing factors.<br/><br/>Is able to prove causation.<br/></td><td id="Do\E" class="" style="width:300px">Usually demands more knowledge and resources to gather data. <br/><br/>You can have an unexpected impact on your research subject.<br/></td></tr></tbody></table><h3 id="624c9140-bc39-4578-8fb9-f48995e1724e" class=""><em><mark class="highlight-yellow">Research methods for collecting data</mark></em></h3><table id="53e5a3a8-da77-49c7-a9b0-a88ec0b02fb8" class="simple-table"><thead class="simple-table-header"><tr id="35fc5605-beb1-4937-9cac-e0a35b72afd7"><th id="murZ" class="simple-table-header-color simple-table-header"><strong>Research method</strong></th><th id="EVUz" class="simple-table-header-color simple-table-header"><strong>Primary or secondary?</strong></th><th id="eUqV" class="simple-table-header-color simple-table-header"><strong>Qualitative or quantitative?</strong></th><th id="RmDf" class="simple-table-header-color simple-table-header" style="width:361.9375px"><strong>When to use</strong></th></tr></thead><tbody><tr id="ee70ac9f-c73b-4813-9511-4829e7bf2f81"><th id="murZ" class="simple-table-header-color simple-table-header">Experiments</th><td id="EVUz" class="">Primary</td><td id="eUqV" class="">Quantitative</td><td id="RmDf" class="" style="width:361.9375px">to examine the existence of causal connections.</td></tr><tr id="cf896383-ab14-411e-90c8-bad8b166b058"><th id="murZ" class="simple-table-header-color simple-table-header">Survey</th><td id="EVUz" class="">Primary</td><td id="eUqV" class="">Quantitative</td><td id="RmDf" class="" style="width:361.9375px">to comprehend a population&#x27;s basic traits.</td></tr><tr id="0e4e433b-e7e6-495d-ac51-4dfc892c51de"><th id="murZ" class="simple-table-header-color simple-table-header">Interview/focus group</th><td id="EVUz" class="">Primary</td><td id="eUqV" class="">Qualitative</td><td id="RmDf" class="" style="width:361.9375px">to comprehend a subject in greater detail.</td></tr><tr id="c0617515-9639-40c9-8bc4-793a0d11b30e"><th id="murZ" class="simple-table-header-color simple-table-header">Observation</th><td id="EVUz" class="">Primary</td><td id="eUqV" class="">Either</td><td id="RmDf" class="" style="width:361.9375px">to comprehend how something takes place in its natural environment.</td></tr><tr id="12f65917-bad7-467b-b549-8df006672aab"><th id="murZ" class="simple-table-header-color simple-table-header">Literature review</th><td id="EVUz" class="">Secondary</td><td id="eUqV" class="">Either</td><td id="RmDf" class="" style="width:361.9375px">to place your findings within a body of previously published work or to assess trends within a research area.</td></tr><tr id="ec090bea-cd9b-4eae-81a3-c276a4f93058"><th id="murZ" class="simple-table-header-color simple-table-header">Case study</th><td id="EVUz" class="">Either</td><td id="eUqV" class="">Either</td><td id="RmDf" class="" style="width:361.9375px">to obtain a thorough insight into a particular group or situation, or if you lack the funding for a sizable study.</td></tr></tbody></table><h2 id="285839ab-f46b-41ae-b6cb-1e0cfaeb4a57" class=""><mark class="highlight-orange"><strong>Methods for Analyzing Data</strong></mark></h2><p id="6a1d83a9-b381-4e16-b43b-b97eb079ed89" class="">Depending on the sort of data you gather and how you prepare it for analysis, your data analysis techniques will vary.</p><p id="9242aa5a-2af9-44a3-887d-7b642f8c4b94" class="">Both quantitative and qualitative analyses of data are frequently possible. For instance, it is possible to analyze survey results statistically by looking at response rates or qualitatively by looking at the responses&#x27; meanings.</p><h3 id="a44da79b-fdd1-4b29-9528-e725a7396fdf" class=""><em><mark class="highlight-yellow"><strong>Qualitative analysis methods</strong></mark></em></h3><p id="06387950-fd87-4f92-8c2b-633a421af8cc" class="">In order to comprehend words, thoughts, and experiences, qualitative analysis is used. It can be used to analyze data that was gathered using non-probability sampling techniques, open-ended surveys and interviews, literature reviews, case studies, ethnographies, and other sources that use language rather than statistics.</p><p id="65cb3415-af41-4296-a243-12fcbd8ac91e" class="">Because qualitative analysis depends on the researcher&#x27;s judgment and can be highly flexible, you must carefully consider your choices and presumptions and take care to avoid research bias.</p><h3 id="7e7aea37-5566-4530-85e0-a5be985ed269" class=""><em><mark class="highlight-yellow"><strong>Quantitative analysis methods</strong></mark></em></h3><p id="3665fa2c-dc27-444c-b3c1-071d1d8d4c7b" class="">To comprehend frequencies, averages, and correlations (in descriptive research) or cause-and-effect relationships (in experiments), quantitative analysis uses numbers and statistics.</p><p id="85195474-f520-4301-8716-6f15dcff6828" class="">To evaluate data that was gathered either during an experiment or via probability sampling techniques, you can apply quantitative analysis.</p><p id="e1f537ab-82fe-4e3c-9557-8580b9476e2b" class="">The statistical validity of the data collection and analysis allows for easy standardization and sharing of the quantitative analysis findings among academics.</p><h2 id="a4a0b41d-b7ed-4103-855e-76ca709dc613" class=""><mark class="highlight-orange"><strong>Research Methods for Analyzing Data</strong></mark></h2><table id="be5b1d00-58d2-4ed9-9ca2-081046d87698" class="simple-table"><tbody><tr id="1b846aab-d278-4160-9245-ede8467aa28b"><td id="?[_C" class="">Research method</td><td id="EyiL" class="" style="width:117px"><strong>Qualitative or quantitative?</strong></td><td id="Pt@Y" class="" style="width:491.015625px">When to use</td></tr><tr id="db80e5bf-6231-4065-9a12-752084c871e4"><td id="?[_C" class="">Statistical analysis</td><td id="EyiL" class="" style="width:117px"><strong>quantitative</strong></td><td id="Pt@Y" class="" style="width:491.015625px">to statistically validly Analyse data that has been acquired, such as from experiments, surveys, and observations.</td></tr><tr id="55741cb6-7932-4d49-88ea-b1a9b4feadc6"><td id="?[_C" class="">Meta-analysis</td><td id="EyiL" class="" style="width:117px"><strong>Quantitative</strong></td><td id="Pt@Y" class="" style="width:491.015625px">to statistically evaluate the findings of a sizable number of investigations. Can only be applied to studies that collected data in a statistically valid manner.</td></tr><tr id="b7f119a9-a905-4b61-bd47-93688a85a131"><td id="?[_C" class="">content analysis</td><td id="EyiL" class="" style="width:117px">Either</td><td id="Pt@Y" class="" style="width:491.015625px">to examine a sizable amount of written or visual information gathered from surveys, literature studies, or other sources.<br/>can be quantitative (e.g., word frequencies) or qualitative (e.g., word meanings<br/></td></tr><tr id="88f8cab4-5f51-4f93-99f3-27bc61862d46"><td id="?[_C" class="">Thematic analysis</td><td id="EyiL" class="" style="width:117px">Qualitative</td><td id="Pt@Y" class="" style="width:491.015625px">to examine information gathered from surveys, focus groups, or written sources.<br/>to comprehend the broad themes in the data and the manner in which they are expressed.<br/></td></tr></tbody></table><figure id="2132151d-3f6f-4566-974c-d962673c61ec"><div class="source"><a href="https://www.notion.soundefined"></a></div></figure><figure id="c812a76b-e721-44e9-95a7-2614609b62f2" class="image"><a href="Executing%20your%20Methodology%20Obtaining%20Results%20and%20R%201b2e41d9a4164f6ea1e3e74d1522a0a7/Untitled.png"><img style="width:621px" src="Executing%20your%20Methodology%20Obtaining%20Results%20and%20R%201b2e41d9a4164f6ea1e3e74d1522a0a7/Untitled.png"/></a><figcaption>Type of research methodology <br/>URL: <br/><a href="https://www.educba.com/types-of-research-methodology/">https://www.educba.com/types-of-research-methodology/</a> </figcaption></figure><h2 id="c7f4896a-afa4-42e2-aaee-5a1481aa8f0c" class=""><mark class="highlight-orange">Steps to Illustrate a Research Methods  </mark></h2><h3 id="be10af8e-8c57-4d81-9c06-963ab7bc3cec" class=""><em><mark class="highlight-yellow">Step 1: Write your hypotheses and plan your research design</mark></em></h3><p id="fbe64362-d254-4dc9-91c9-0f86786040f4" class="">You must first clearly define your hypotheses and set out your research design in order to gather reliable data for statistical analysis.</p><p id="fe057f1b-3aa7-4bf5-a498-4e2f58020312" class=""><mark class="highlight-brown"><strong>Writing statistical hypotheses:</strong></mark></p><p id="7a09cfac-9b59-4978-9baa-f12971fde9f0" class="">Investigation of a link between factors within a population is frequently the aim of research. Starting with a hypothesis, you can test it using statistical analysis.</p><p id="843f15f0-e596-4627-9f12-6cfe1d0e2238" class="">A forecast about a population is formalized as a statistical hypothesis. Every research hypothesis is transformed into a null and an alternate hypothesis that may be tested with sample data.</p><p id="2ffb7e1e-8e5f-4522-9ab8-9baba7315638" class="">The alternative hypothesis states your research&#x27;s prediction of an effect or relationship, whereas the null hypothesis always predicts no effect or relationship between variables.</p><p id="c1230050-8b5c-4ffd-bd6e-33a0f5648edc" class=""><mark class="highlight-brown"><strong>Planning your research design</strong></mark></p><p id="69462468-2d5d-4fd8-b690-f5d071cdca19" class="">Your overarching plan for gathering and analyzing data is called a research design. The statistical tests you can employ to assess your hypothesis later are determined by it.</p><p id="c9418d98-7667-4a53-9c27-d8dd56abd797" class="">Choose a descriptive, correlational, or experimental design for your study first. While descriptive and correlational studies just assess variables, experiments directly affect them.</p><ul id="020c3c83-4069-42e4-8ae1-4148c107b29a" class="bulleted-list"><li style="list-style-type:disc">Using statistical comparison or regression tests, you can evaluate a cause-and-effect relationship in an experimental design (for instance, the impact of meditation on test results).</li></ul><ul id="9fe0ad35-9d0b-44c9-a6ea-549c032b850b" class="bulleted-list"><li style="list-style-type:disc">In a correlational design, correlation coefficients and significance tests can be used to examine associations between variables (such as parental income and GPA) without making any assumptions about causality.</li></ul><ul id="66cbb1b9-e385-4869-8dee-0c5509eb4a3f" class="bulleted-list"><li style="list-style-type:disc">Using statistical tests to deduce conclusions from sample data, a descriptive design allows you to investigate the features of a population or phenomenon (such as the prevalence of anxiousness in American college students).</li></ul><p id="9d064275-ded1-4df9-9b17-63afdd886def" class="">Whether you compare participants at the group level, individual level or both depends on your research strategy.</p><p id="45a89190-a854-42ca-92ac-b3a11749c4fd" class="">In a between-subjects design, you contrast the results at the group level between participants who received various treatments (for instance, those who engaged in a meditation practice against those who did not).</p><p id="14a2716f-35c7-4a0d-ada2-0a467e1e53e1" class="">With a within-subjects design, you may compare outcomes from individuals who took part in all research treatments (for instance, ratings from before and after a meditation exercise).</p><p id="7b8de712-3b4c-42b8-b1d1-ef9917e58549" class="">In a mixed (factorial) design, one variable is changed among subjects, while another is changed within subjects (for instance, the pretest and posttest results from individuals who either engaged in or did not engage in meditation practice).</p><p id="bc572ed1-822a-4009-b75c-6c0219849c51" class=""><mark class="highlight-brown"><strong>Measuring variables</strong></mark></p><p id="96fe26ad-52d6-4654-a8a6-246a57885966" class="">You should operationalize your variables and establish precisely how you will measure them while creating a research design.</p><p id="5d30fd41-2b93-489f-90c1-6fb5893ea345" class="">The level of measurement of your variables, which reveals what kind of data they contain, is crucial for statistical analysis:</p><ul id="ee14a98c-8bb4-494b-a96d-39ac927a8afe" class="bulleted-list"><li style="list-style-type:disc">Groupings are represented by categorical data. These could be ordinal (like level of language skill) or nominal (like gender).</li></ul><ul id="4329aaff-d69b-4733-95e9-c3d710241eae" class="bulleted-list"><li style="list-style-type:disc">Quantitative information depicts quantities. These could be based on a ratio scale (like age) or an interval scale (like test scores).</li></ul><p id="9a2899a3-cd83-4d2c-a3fe-9ed19ce70620" class="">Numerous factors can be measured with varying degrees of accuracy. Age information, for instance, can be quantified (eight years old) or categorical (young). A variable is not always quantitative rather than categorical just because it is coded numerically (e.g., level of agreement from 1 to 5).</p><p id="e296d5e3-8169-410e-81c6-e3464ed68c32" class="">For the purpose of selecting relevant statistics and hypothesis tests, the measurement level must be determined. For instance, although categorical data cannot be used to calculate a mean score, quantitative data can.</p><p id="5c7e446f-2ea8-4233-a14c-0da23a2decb5" class="">Along with measurements of your variables of interest, you&#x27;ll frequently gather information on pertinent participant characteristics in a research project.</p><h3 id="0c603da2-20e2-4104-9cf1-a17a6f986a4b" class=""><em><mark class="highlight-yellow"><strong>Step 2: Collect data from a sample</strong></mark></em></h3><p id="143a4f46-7fb7-4c66-8ac4-2ba2ccbc6438" class="">Most of the time, gathering data from every person in the population you&#x27;re interested in studying would be too expensive or complicated. Instead, you will gather information from a sample.</p><p id="e24644f9-3ef1-49c5-8445-19a95bbe3492" class="">As long as you follow the proper sampling techniques, statistical analysis enables you to extrapolate your conclusions from your sample. A sample that is typical of the population is what you should aim for.</p><p id="576dd6ac-2750-4e89-8b51-0ec946712120" class="">Sampling for statistical analysis</p><p id="666a8a98-c11d-411e-91c4-9fc911e455ff" class="">There are two main approaches to selecting a sample.</p><ul id="f67fe252-8f98-4b01-8265-cdd95adf43b0" class="bulleted-list"><li style="list-style-type:disc">Probability sampling: Each person in the population has a probability of being chosen at random for the study.</li></ul><ul id="14181ade-9ea0-4c4f-885d-fe201710e4dc" class="bulleted-list"><li style="list-style-type:disc">Non-probability sampling: Some population members are more likely to be chosen for the study than others due to factors like convenience or voluntary self-selection.</li></ul><p id="f073db55-349f-4045-9728-7a6b82f622e7" class="">Theoretically, a probability sampling strategy should be used for highly generalizable conclusions. The use of random selection ensures that the data from your sample is representative of the population and reduces numerous types of research bias, such as sampling bias. When data are gathered via probability sampling, parametric tests can be utilized to draw robust statistical conclusions.</p><p id="6fd03146-264a-4622-ad4c-615890dd5dd4" class="">But in reality, getting the perfect sample is rarely feasible. Non-probability samples are simpler to assemble and get data from but are more susceptible to biases like self-selection bias. Although non-parametric tests produce weaker inferences about the population, they are more appropriate for non-probability samples. If you want to use parametric tests for non-probability samples.</p><p id="9d57860d-02e4-4155-af69-a0e30de15408" class="">you have to make the case that:</p><ul id="d2450e92-58e5-42e7-ab90-fe5d0abd5c77" class="bulleted-list"><li style="list-style-type:disc">The population to which you&#x27;re extrapolating your results from your sample is representative.</li></ul><ul id="9a767fe9-9cb0-4140-bb2c-1c310b029a41" class="bulleted-list"><li style="list-style-type:disc">There&#x27;s no systematic bias in your sample.</li></ul><p id="f050f725-41ec-45db-aa0a-e477316b6fa9" class="">Keep in mind that external validity limits your ability to extrapolate your findings beyond the members of your sample. For instance, not all non-WEIRD populations will immediately be able to use the findings from Western, Educated, Industrialized, Rich, and Democratic samples (such as US college students).</p><p id="7839e15f-65f0-4edd-98a1-7c5b25445d86" class="">If you use parametric tests on data from non-probability samples, be sure to explain in your discussion section the restrictions on how broadly your results can be applied.</p><p id="7155437c-aa66-4afc-8a50-96522803111f" class=""><mark class="highlight-brown"><strong>Create an appropriate sampling procedure</strong></mark></p><p id="e4c1d0ef-5f3b-4196-b6c1-e08ec48f61c8" class="">Make a decision regarding your research&#x27;s recruitment strategy based on the resources available.</p><p id="05fbe769-e20b-4b86-be56-46aeddf7bd3a" class="">Will you have the means to widely publicize your research, including outside of the university setting?</p><p id="7775fec3-bf7e-4398-9054-56b1148aac37" class="">Will you have the resources to gather a representative sample of a diverse range of people?</p><p id="64c7c4d8-6cbc-4ae0-8744-21a2ce2ad0a2" class="">Do you have the time to reach out to members of difficult-to-reach groups and follow up with them?</p><p id="c39714a4-6e4b-443e-bf41-e19597868392" class=""><mark class="highlight-brown"><strong>Calculate a sufficient sample size</strong></mark></p><p id="3095cb03-7517-4b27-870c-526dce85d3c4" class="">Consider existing research in your field or use statistics to determine your sample size before recruiting volunteers. A sample that is too large will be more expensive than necessary, whereas a sample that is too tiny may not be representative of the population.</p><p id="2f110884-a4da-4d50-bcee-07f5de86c425" class="">Online calculators for sample size are widely available. Depending on whether subgroups are present and how rigorous your study needs to be (for example, in clinical research), several formulas are utilized. As a general rule, each subgroup requires a minimum of 30 units or more.</p><p id="be7dd47a-57d1-4ec4-b2ff-35cca51c258f" class="">You must comprehend and enter the following essential details to utilize these calculators:</p><ul id="5f93d9e9-3370-4589-af07-45e1344b0275" class="bulleted-list"><li style="list-style-type:disc"><strong>Significance level (alpha): a threshold commonly set at 5% that indicates how much risk you are ready to accept in rejecting the correct null hypothesis.</strong></li></ul><ul id="9dbde605-e7b8-4782-89d6-7f8475526462" class="bulleted-list"><li style="list-style-type:disc"><strong>Statistical power: the likelihood that your study will find an impact of a particular size, often 80% or greater.</strong></li></ul><ul id="ee3500c1-b893-4e81-b1f5-1bb841e27e92" class="bulleted-list"><li style="list-style-type:disc"><strong>predicted effect size: a standardized measure of the size of the predicted outcome of your investigation, typically based on results from other studies with a similar design.</strong></li></ul><ul id="a81dc837-f05b-4a59-a071-e908a50a6766" class="bulleted-list"><li style="list-style-type:disc"><strong>Population standard deviation: a calculation of the population parameter using data from an earlier study or your pilot experiment.</strong></li></ul><h3 id="684a6b7b-eeb9-4982-858b-f9b254f5da6b" class=""><mark class="highlight-yellow"><em><strong>Step 3: Summarize your data with descriptive statistics</strong></em></mark></h3><p id="3998bd22-6182-45b0-aba8-989dedf31098" class="">Once you&#x27;ve gathered all of your data, you may examine it and create statistics that describe it.</p><p id="b2d8d930-2c5f-4e47-b821-7ab12de443da" class=""><mark class="highlight-brown"><strong>Inspect your data</strong></mark></p><p id="6f2879b0-0a76-470b-b1c0-c7572fb84e88" class="">There are other ways to examine your data, including the ones listed below:</p><ul id="c8d61d03-6656-46de-9828-57a9b63a1f73" class="bulleted-list"><li style="list-style-type:disc">Creating frequency distribution tables with the data from each variable.</li></ul><ul id="67b91ec6-3db8-46a7-ae22-2945657be758" class="bulleted-list"><li style="list-style-type:disc">Using a bar chart to visualize data from a significant variable in order to see how responses were distributed.</li></ul><ul id="a172b239-4ffb-4a2d-9c67-c94cc1a32b80" class="bulleted-list"><li style="list-style-type:disc">Using a scatter plot to illustrate the relationship between two variables.</li></ul><p id="7a2ba6fd-c4ff-40a3-83c1-91d32c409d19" class="">You may determine whether your data have a skewed or normal distribution and whether there are any outliers or missing data by visualizing your data in tables and graphs.</p><p id="a21bc281-a558-462b-acbd-ecf891fe6aa2" class="">A normal distribution means that your data are symmetrically distributed around a center where most values lie, with the values tapering off at the tail ends.</p><p id="2a821366-6223-4a12-ad0c-72a6b6fc18a2" class="">A skewed distribution, on the other hand, is asymmetrical and has more values at one end than the other. Only a few descriptive statistics should be employed with skewed distributions, thus it&#x27;s crucial to keep the distribution&#x27;s form in mind. You might require a methodical way to deal with these values because extreme outliers can potentially contribute to misleading statistics.</p><p id="5f307719-f8ff-479a-b9f1-e7272c48a5e8" class=""><mark class="highlight-brown"><strong>Calculate measures of central tendency</strong></mark></p><p id="48d96aa5-7e5a-4bdf-89ca-089544e52001" class="">The majority of the values in a data set are described by measures of central tendency. There are typically three major measures of central tendency:</p><p id="9ace099c-ce9e-4ccc-956f-c9bfafc578b7" class="">Mode: the data set&#x27;s most prevalent response or value.</p><p id="26071462-76fb-4e50-81e3-2d785ec86e46" class="">Median: When data collection is organized from low to high, the precise midpoint number is called the median.</p><p id="1ab166c1-0b4e-4d2d-bb6f-a0da3da6ad24" class="">The sum of all values divided by the total number of values is the mean.</p><p id="b89d4ef7-bfa0-43d3-aa86-d0b613d6e486" class="">However, just one or two of these measurements may be acceptable depending on the distribution&#x27;s form and the level of measurement. While a variable like reaction speed may not have a mode at all, many demographic features can only be represented using the mode or proportions.</p><p id="ddae7629-0122-4db1-89de-a022b8bc3f7c" class=""><mark class="highlight-brown"><strong>Calculate measures of variability</strong></mark></p><p id="231905a7-d575-44e2-8da3-2bf50e72da37" class="">The degree of variability in data collection reveals how dispersed the values are. There are typically four key measurements of variability reported:</p><ul id="ab60b061-fb31-4d83-ad6c-ee91cf40dda2" class="bulleted-list"><li style="list-style-type:disc">Range: the sum of the data set&#x27;s highest and lowest values.</li></ul><ul id="9656f3bc-dd13-4e29-9eb8-1d022d4642e1" class="bulleted-list"><li style="list-style-type:disc">The range of the data set&#x27;s middle quartile is known as the interquartile range.</li></ul><ul id="5346281d-833f-4473-9d14-377df5f581c0" class="bulleted-list"><li style="list-style-type:disc">The average distance between each value in your data collection and the mean is called the standard deviation.</li></ul><ul id="12b3b6ab-1934-4432-93e3-dc5a78f10d3d" class="bulleted-list"><li style="list-style-type:disc">Variance: the standard deviation squared.</li></ul><p id="b47a29cf-f6a5-4e8e-810c-04b80c0fc9e4" class="">Once more, the degree of measurement and distribution form should direct your choice of variability statistics. For skewed distributions, the optimum metric is the interquartile range, while for normal distributions, the optimal measures are standard deviation and variance.</p><h3 id="0568e8a8-a90f-46ec-9784-447bda5a8f31" class=""><em><mark class="highlight-yellow"><strong>Step 4: Test hypotheses or make estimates with inferential statistics</strong></mark></em></h3><p id="82fffcec-b853-4958-af7a-c09d53872948" class="">A parameter is a number that describes a population, whereas a statistic is a number that describes a sample. You can conclude population parameters using inferential statistics based on sample statistics.</p><p id="1898ab8e-b5a2-4f6b-b72b-628d28d662a7" class="">To draw conclusions from statistics, researchers frequently employ two main techniques simultaneously.</p><p id="f3a3a06a-f124-446e-b675-21b41ab277f4" class="">Calculating population parameters based on sample data is known as estimation.</p><p id="d25decfd-0176-43fc-b15c-5c942e17a477" class="">Hypothesis testing is a formal procedure for employing samples to assess population-based research hypotheses.</p><p id="7e8b8225-b07c-491a-9995-598070b81f7a" class=""><mark class="highlight-brown"><strong>Estimation</strong></mark></p><p id="0f2aa230-edea-4d25-b82b-905a729d930a" class="">Using sample statistics, you may estimate two different types of population parameters:</p><ul id="894fe417-1c46-40b8-9095-44cc091203d0" class="bulleted-list"><li style="list-style-type:disc">A point estimate is a figure that sums up your best guesses on the precise parameter.</li></ul><ul id="2b1e6754-8f5e-49b7-aeb7-de83e55a4acc" class="bulleted-list"><li style="list-style-type:disc">An interval estimate is a range of values that you think the parameter will fall inside.</li></ul><p id="a3a9dd21-afe4-442c-9d39-ef035d019482" class="">It is recommended to utilize point and interval estimates in your work if your goal is to extrapolate and report population features from sample data.</p><p id="cc3c7787-6984-4575-a21d-2c815add77d3" class="">When you have a representative sample, you can use a sample statistic point estimate for the population parameter (for instance, in a large public opinion survey, the percentage of the sample that supports the current government is used as the population percentage of government supporters).</p><p id="5a999385-29bd-4788-9d24-0934b02a0fb3" class="">Because there is always some element of estimating error, you should also offer a confidence interval as an interval estimate to illustrate the range of a point estimate.</p><p id="cebc20fd-2a99-4daa-a75c-2aaf34d476af" class="">A confidence interval expresses where you&#x27;d typically anticipate finding the population parameter most of the time using the standard error and z score from the standard normal distribution.</p><p id="5ed0b18e-1840-4529-a50d-1fafff243625" class=""><strong><mark class="highlight-brown">Hypothesis testing</mark></strong></p><p id="39a65c72-0460-424c-b585-a52bb58bbd7e" class="">You can test hypotheses regarding connections between variables in the population using data from a sample. Statistical tests are used in hypothesis testing to determine whether the null hypothesis can be rejected or not, starting with the presumption that it is true in the population.</p><p id="94cf9bc1-78c8-4e0c-8a07-ff2590aefc53" class="">With the null hypothesis assumed to be true, statistical tests show where your sample data would fall on the expected distribution of sample data. These tests have two primary results:</p><ul id="fca7f2db-7f7f-46f6-aa56-77bc618f0386" class="bulleted-list"><li style="list-style-type:disc">A test statistic reveals how much your data deviates from the test&#x27;s null hypothesis.</li></ul><ul id="152fc61c-f543-41c0-b3e3-51751074e58b" class="bulleted-list"><li style="list-style-type:disc">A p-value indicates the probability that your results will be obtained if the null hypothesis is indeed true in the population.</li></ul><p id="6f85c021-e1d0-4b50-af90-95de9cf50f0c" class="">Statistical tests come in three main varieties:</p><ul id="62f5de29-67a0-4fd4-80d6-b314bd6cf851" class="bulleted-list"><li style="list-style-type:disc">Comparison tests evaluate the differences in results across groups.</li></ul><ul id="74abce81-02fa-4227-9bdb-083939b10c0a" class="bulleted-list"><li style="list-style-type:disc">Regression tests evaluate the causal connections between variables.</li></ul><ul id="7f118d5f-969d-4810-b9e5-578ee5dc703d" class="bulleted-list"><li style="list-style-type:disc">Without assuming causation, correlation tests examine correlations between variables.</li></ul><p id="6ec8d49c-999e-456c-93f6-f7903f67298b" class="">Your research questions, research design, sampling strategy, and data characteristics will all influence the statistical test you use</p><p id="3fc97418-fe69-4502-aef7-bc3f7f72d1a8" class=""><mark class="highlight-brown"><strong>Parametric tests</strong></mark></p><p id="6eec138c-eb4f-402e-b789-b7184229ee89" class="">Based on sample data, parametric tests draw significant conclusions about the population. However, only specific sorts of variables can be utilized, and particular presumptions must be met in order to use them. You can carry out the necessary data modifications or switch to alternative non-parametric tests if your data contradict these presumptions.</p><p id="33551ce3-24e5-416d-8239-e7ec246a369d" class="">Regression analyses the degree to which changes in one or more of the outcome variables are influenced by changes in the predictor variable.</p><ul id="dcb5ea6d-8349-46ea-9a34-2423b8b812ef" class="bulleted-list"><li style="list-style-type:disc">One predictor variable and one outcome variable are included in a simple linear regression.</li></ul><ul id="711f8972-c334-4396-8709-a4aa31ad2ffe" class="bulleted-list"><li style="list-style-type:disc">One result variable and two or more predictor variables make up a multiple linear regression.</li></ul><ul id="9ff6e597-4153-4830-9f38-d89555f302f1" class="bulleted-list"><li style="list-style-type:disc">In comparison tests, group means are typically compared. These could be the averages of several sample groups (such as a treatment and control group), the averages of one sample group collected at various points in time (such as pretest and posttest scores), or the average of both the sample and the population.</li></ul><ul id="eb9f10fc-4419-4c12-8fe6-b97800a6d316" class="bulleted-list"><li style="list-style-type:disc">When the sample size is small (30 or less), a t-test is performed for precisely 1 or 2 groups.</li></ul><ul id="b42fb02b-5e30-4740-8072-931b560f7376" class="bulleted-list"><li style="list-style-type:disc">When the sample is big, a z-test is performed for precisely 1 or 2 groups.</li></ul><ul id="8f8e0a12-06d8-4e5c-b0b6-a2990b229ea7" class="bulleted-list"><li style="list-style-type:disc">An ANOVA is for three groups or more.</li></ul><p id="fa20167b-8f09-4ece-ba79-2dc1f9f26ed8" class="">The amount and kind of samples used, as well as the hypotheses, determine the subtypes of the z and t-tests:</p><ul id="61c809cb-0206-41a6-8d5e-7d6f4db7323c" class="bulleted-list"><li style="list-style-type:disc">Use a one-sample test if you only have one sample to compare to the population mean.</li></ul><ul id="ef2448a4-4b0c-44ad-8015-7396aa54b288" class="bulleted-list"><li style="list-style-type:disc">Use a dependent (paired) samples test when you have paired measurements (within-subjects design).</li></ul><ul id="8184cfe8-c864-4f1f-82e2-a4f669368573" class="bulleted-list"><li style="list-style-type:disc">Use an independent (unpaired) samples test if you have entirely distinct measurements from two unmatched groups (between-subjects design).</li></ul><ul id="da61f96e-ac0a-48db-8266-bd19059e1629" class="bulleted-list"><li style="list-style-type:disc">Use a one-tailed test if you anticipate a difference between groups going one way or the other.</li></ul><ul id="b1ed7726-a357-4c35-b7b4-1f573a8698a0" class="bulleted-list"><li style="list-style-type:disc">Use a two-tailed test if you have no expectations regarding the direction of a difference between groups.</li></ul><p id="c7883a72-f736-4317-975b-95563443e606" class="">Pearson&#x27;s is the only parametric correlation test available. The strength of a linear relationship between two quantitative variables is indicated by the correlation coefficient (r).</p><p id="2d1d403f-389a-45c3-92c0-aebc0414d836" class="">However, you must also do a significance test on the correlation coefficient, typically a t-test, to obtain a p-value, in order to determine whether the correlation in the sample is strong enough to be significant in the population. To determine how far the correlation coefficient deviates from zero in the population, this test uses your sample size.</p><h3 id="9844c531-4b81-4864-8368-c047599fae05" class=""><em><mark class="highlight-yellow"><strong>Step 5: Interpret your results</strong></mark></em></h3><p id="18c38dcd-95df-414f-8005-0c8bba97601e" class="">The final step of statistical analysis is interpreting your results.</p><p id="258a2866-c8fb-424c-bc92-87cc962505ca" class=""><mark class="highlight-brown"><strong>Statistical significance</strong></mark></p><p id="38fec8e0-5844-4550-a69a-363b7abbeac4" class="">In hypothesis testing, the primary standard for drawing inferences is statistical significance. To determine if your results are statistically significant or not, you must compare your p-value to a predetermined significance level (often 0.05).</p><p id="dc4fa2c8-f521-4962-81d1-395c183886d1" class="">Statistically significant results are thought to be unlikely to have happened by chance alone. If the null hypothesis is true in the population, then there is only a very small likelihood that such a result would occur.</p><p id="67b5448b-8961-49e5-9cd7-de6844528952" class=""><strong><mark class="highlight-brown">Effect size</mark></strong></p><p id="1c0df516-fbc6-4e2d-a2b7-648cfc32664a" class="">A statistically significant result may not always imply major clinical implications or real-world applications.</p><p id="20020c19-93cd-4416-bfb5-2a173a05e979" class="">The effect size, on the other hand, reveals the relevance of your findings in real-world contexts. For a complete view of your results, it&#x27;s crucial to report effect sizes together with your inferential statistics. If you are writing a paper in the APA format, you must additionally include interval estimates of effect sizes.</p><p id="daafd755-3bbf-4a4e-91f8-ecc8f3d550e5" class=""><mark class="highlight-brown"><strong>Decision errors</strong></mark></p><p id="e5a1ca1d-30cf-4fb5-a161-443fb7e3d7d2" class="">Errors of type I and type II occur in study conclusions. A Type I error is when the null hypothesis is rejected when it is true, and a Type II error is when the null hypothesis is not rejected when it is untrue.</p><p id="51b9acb3-4af8-46df-8891-88c2b55d8a2e" class="">By choosing an ideal significance level and making sure that the power is high, you can try to reduce the chance that these errors will occur. There is a trade-off between the two faults, though, so careful balancing is required.</p><p id="3518f3ed-04cc-4d38-b427-2aedf42a6589" class=""><mark class="highlight-brown"><strong>Frequentist versus Bayesian statistics</strong></mark></p><p id="ad205b32-4756-485c-acbd-d1ed08994f53" class="">Frequentist statistics traditionally emphasizes the significance testing of the null hypothesis and always begins with the presumption of a valid null hypothesis.</p><p id="fe2bd410-600e-48a6-90d8-0f3b0b48844d" class="">The popularity of Bayesian statistics as a substitute strategy has increased during the past few decades. With this method, you regularly revise your hypotheses in light of your predictions and findings by drawing on prior research.</p><p id="3c06d3c9-4aec-4a07-94e6-6867523c03d0" class="">Instead of deciding whether or not to reject the null hypothesis, the Bayes factor compares the relative weight of the evidence supporting the null and the alternative hypothesis.</p><h2 id="0fdbf42c-bf01-4934-a4cb-0a7b7d369de0" class=""><mark class="highlight-orange">How to write the results section</mark></h2><p id="99c278a9-8f97-40da-b737-d4f81d7845d4" class="">When conducting research, it&#x27;s crucial to provide the findings of your investigation before going into detail about your interpretations of them. This maintains the material itself apart from your interpretation of it and gives your reader a clear understanding of what you actually discovered.</p><p id="47d3972c-7e1d-4f87-a2ee-5380aac5b3e5" class="">Here are a few best practices:</p><ul id="ddd50444-85f5-4112-aa88-8bb6eb9364a1" class="bulleted-list"><li style="list-style-type:disc">You should always write about your findings in the past tense.</li></ul><ul id="17907afc-4187-4289-b9c3-1d67c93c0d3b" class="bulleted-list"><li style="list-style-type:disc">The length of this section will vary depending on the quantity of data you gathered and examined, but it should be expressed as succinctly as possible.</li></ul><ul id="a6894189-64af-4f3c-b7b0-9da5cdfa4a9a" class="bulleted-list"><li style="list-style-type:disc">Only incorporate findings that directly address your study questions. Avoid using terms like &quot;appears&quot; or &quot;implies&quot; that are speculative or interpretative.</li></ul><ul id="363d7bd5-a756-4bc8-a4a8-a0f5b20e67aa" class="bulleted-list"><li style="list-style-type:disc">If you have more results, think about including them in a footnote or an appendix.</li></ul><ul id="ada41942-e2bd-4cb6-a769-4c9a08174b3d" class="bulleted-list"><li style="list-style-type:disc">Always begin with your most general outcomes and work your way down to your more specific (but still pertinent) ones. Think of it like a shoe store: first, discuss the shoes as a whole, then the sneakers, boots, sandals, etc.</li></ul><h3 id="e42f683b-2afb-49a5-accc-3371791164b9" class=""><em><mark class="highlight-yellow">Reporting quantitative research results</mark></em></h3><p id="39ab3b5c-1508-4e53-b045-766fe1f023fd" class="">You will probably be working with the outcomes of some form of statistical analysis if your research was quantitative.</p><p id="ea44287a-0637-4c5c-bf67-985cedbe0e3d" class="">Any statistical tests you used to compare groups or evaluate correlations between variables should be reported in your results section. The validity of each hypothesis should also be mentioned.</p><p id="66db1bf1-2e07-452f-a2b2-b071b9f7b815" class="">It makes the most sense to frame your quantitative findings around your research questions or hypotheses. Share the following for each query or theory:</p><ul id="07f3a1d5-ba08-481e-a381-37a41fe9788d" class="bulleted-list"><li style="list-style-type:disc">A reminder of the type of analysis you conducted (such as a simple linear regression or a two-sample t-test). In your methods section, you could provide a more thorough explanation of your analysis.</li></ul><ul id="a292d6db-fc06-44ce-9bed-659c7800e554" class="bulleted-list"><li style="list-style-type:disc">A succinct breakdown of every pertinent finding, both favorable and unfavorable. This can include any pertinent inferential statistics (such as t scores, degrees of freedom, and p values) as well as descriptive statistics (like averages and standard deviations). Keep in mind that brackets are frequently used with these numbers.</li></ul><ul id="8a4f99fe-eade-47d7-a780-83d34de7445d" class="bulleted-list"><li style="list-style-type:disc">A succinct explanation of how each finding connects to the main question, or whether the hypothesis was confirmed. Any outcomes that did not match your predictions or hypotheses can be briefly mentioned; however, reserve any speculation regarding their significance or ramifications for your discussion and conclusion.</li></ul><p id="bffe2220-c913-4f17-bd4f-763c65b9c3b6" class=""><mark class="highlight-brown"><strong>A note on tables and figures</strong></mark></p><p id="83c54d3c-a746-4c17-851d-e1ac17ac8a9a" class="">Visual components like graphs, charts, and tables are frequently beneficial in quantitative research, but only if they are directly related to your findings. Give these components distinct, illuminating names and labels so that your reader can quickly comprehend what is being displayed. Consider including a figure and table list if you want to include any other visual components that are more incidental.</p><p id="af3b6757-7006-4ee6-8116-9b67037a6c71" class=""><mark class="highlight-brown"><strong>As a rule of thumb:</strong></mark></p><ul id="4de8e0bb-10b2-4eb4-9add-701d2c5ee0e1" class="bulleted-list"><li style="list-style-type:disc">Tables are used to convey precise data and provide a clear summary of diverse results.</li></ul><ul id="1181605a-faa2-4de0-8aac-0ab735a770f0" class="bulleted-list"><li style="list-style-type:disc">Trends and linkages are visualized via graphs and charts, providing an instantaneous illustration of critical results.</li></ul><p id="c3957745-8660-45ad-adec-970d571572fa" class="">Remember to provide a reference to any tables and figures you utilized in the text of your results section. Instead of just repeating the same figures already displayed, summarize or comment on particular points you believe your reader should be aware of.</p><p id="07fe0ee5-6aec-47ba-aa48-f915a231e0d5" class=""><mark class="highlight-brown"><strong>Reporting qualitative research results</strong></mark></p><p id="d6365352-f77b-4322-9e80-24ed02edc222" class="">our findings in qualitative research might not all be directly tied to a particular hypothesis. In this situation, you might organize your results section around the major themes or subjects that arose from your data analysis.</p><p id="2c655560-a8ab-4852-8f84-09390375fcf5" class="">Start with broad generalizations about what the data indicated for each theme. You may cite:</p><ul id="65e4f99e-9cfd-4a5e-bcfd-c16d336c07f0" class="bulleted-list"><li style="list-style-type:disc">Points of agreement or disagreement that keep coming up</li></ul><ul id="a2cad4f5-8d43-4731-8cb0-c9748a5201e9" class="bulleted-list"><li style="list-style-type:disc">Trends and patterns</li></ul><ul id="469850f8-844d-4e70-9249-c3d409c1bcb5" class="bulleted-list"><li style="list-style-type:disc">Especially noteworthy passages from each response</li></ul><p id="ff177fc5-8845-40d8-888d-e5c822ac549d" class="">Then, use specific quotations to further explain and defend these views. Make sure to include any pertinent participant demographic data in your report. An appendix can contain additional material, such as complete transcripts, if necessary.</p><p id="7a0f940d-73e5-4443-a88a-7002bab6f237" class=""><mark class="highlight-brown"><strong>Square root mean method </strong></mark></p><p id="ffa9acf3-a398-459e-b29f-eec7bbe50a80" class="">Other names for the square root mean include the quadratic mean and the root mean square (RMS). By averaging the squares of a group of values and then computing the square root of that average, it is a statistical method for condensing data. The square root mean calculation formula is as follows:</p><p id="0fb773e8-c7e2-4028-a1aa-d9f6b88cf743" class=""><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>M</mi><mi>S</mi><mo>=</mo><msqrt><mfrac><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mo>…</mo><mo>+</mo><msubsup><mi>x</mi><mi>n</mi><mn>2</mn></msubsup></mrow><mi>n</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">RMS = \sqrt{\frac{x_1^2 + x_2^2 + \ldots + x_n^2}{n}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">RMS</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.4817em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3583em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0916em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5281em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8051em;"><span style="top:-2.1885em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span><span style="top:-2.8448em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3115em;"><span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8051em;"><span style="top:-2.1885em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span><span style="top:-2.8448em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3115em;"><span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="minner mtight">…</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7463em;"><span style="top:-2.214em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">n</span></span></span><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.3183em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.88em;"><svg xmlns="http://www.w3.org/2000/svg" width='400em' height='1.88em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4817em;"><span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></p><p id="152adaba-df49-428a-a685-0b1f6f906c29" class="">where n is the total number of values in the dataset, and x1, x2,..., and xn are the values in the dataset.</p><p id="9cb14432-e127-44ab-a00c-6acbd35ebf13" class="">The square root mean is frequently applied in statistical analysis and research in the following ways:</p><ol type="1" id="4cc903f8-2c05-45c1-8036-160563bf13c3" class="numbered-list" start="1"><li>In descriptive statistics, in addition to metrics like the mean, median, and mode, the square root mean can be used to gauge central tendency. When working with variables that exhibit large magnitude fluctuations, as in signal processing or physics, it is particularly helpful.</li></ol><ol type="1" id="82217530-1fb6-43fc-9f72-887ae6866147" class="numbered-list" start="2"><li>A dataset&#x27;s variability can be evaluated using the square root mean, which can also be used to identify outliers or anomalies that may require additional investigation.</li></ol><ol type="1" id="36ec1111-1a6b-46c2-8ba1-badbed9f54ee" class="numbered-list" start="3"><li>Forecasting: The root mean square error (RMSE), a frequently employed metric of forecasting accuracy, can be calculated using the square root mean. The average of the squared discrepancies between the projected values and the actual values is used to determine the RMSE.</li></ol><ol type="1" id="b33df56f-145e-4460-8af7-6e3c852f94c5" class="numbered-list" start="4"><li>Signal processing: The root mean square (RMS) amplitude of a signal, a measurement of the signal&#x27;s strength, can be calculated using the square root mean. This is especially helpful in apps that process audio and video.</li></ol><hr id="bfd6ef4d-ea21-4df0-a2fb-187de746c6d1"/><h3 id="b3a9a4ae-4e71-47cb-a054-13fcc8686130" class=""><mark class="highlight-orange">References/Further Reading:</mark></h3><ul id="a0f4f4a4-71bb-406c-a91f-6ae2ee8fd22e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/category/statistics/">https://www.scribbr.com/category/statistics/</a></li></ul><ul id="f3f2d468-5ba5-4dac-8fe3-4ba9cd7bff38" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/dissertation/results/">https://www.scribbr.com/dissertation/results/</a></li></ul><ul id="c6e03266-5323-4fe8-9b42-601ea77c4041" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.educba.com/types-of-research-methodology/">https://www.educba.com/types-of-research-methodology/</a></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

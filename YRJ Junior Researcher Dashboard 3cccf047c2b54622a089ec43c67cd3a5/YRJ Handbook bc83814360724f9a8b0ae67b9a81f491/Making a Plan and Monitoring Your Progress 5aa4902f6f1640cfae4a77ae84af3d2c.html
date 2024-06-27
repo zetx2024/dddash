@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Making a Plan and Monitoring Your Progress</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5aa4902f-6f16-40cf-ae4a-77ae84af3d2c" class="page serif"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1603804449564-2ad32f24d17e?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 41.74%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📃</span></div><h1 class="page-title">Making a Plan and Monitoring Your Progress</h1><p class="page-description"></p></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="92649dbd-7a18-4870-b773-ef6051eb7697"><div style="font-size:1.5em"><span class="icon">🗒️</span></div><div style="width:100%">It might be difficult to know where to begin while writing a thesis or dissertation, but there are several simple steps you can take. The research method frequently begins with a general notion for a topic about which you&#x27;d like to learn more. You do preliminary research in order to identify a problem. After you&#x27;ve refined your research questions, you may create the groundwork for your study design, which will lead to a proposal outlining your thoughts and intentions. There are a series of steps that should be taken into consideration in order to construct a full research article.</div></figure><h2 id="28cf5414-21dc-44f5-913c-d130565f11f9" class=""><mark class="highlight-orange"><strong>Step 1: Choose your topic.</strong></mark></h2><p id="f27c90de-c3e0-4c06-86f6-5f5db300f4aa" class="">You must first generate some thoughts. Your thesis or dissertation subject may begin with a broad scope. examine the overall area or subject in which you are interested—you may already have particular research interests based on classes you&#x27;ve taken, or you may have had to examine your topic while going to graduate school and creating a statement of purpose.<br/>Even if you already have a decent understanding of your subject, you&#x27;ll need to study broadly to get background information and start narrowing down your options. To begin gathering relevant materials, conduct an initial literature review. Take notes while you read and try to discover difficulties, questions, arguments, inconsistencies, and holes. The goal is to restrict your focus from a wide area of interest to a precise specialization.<br/>Consider the practicalities: your program&#x27;s criteria, the length of time you have to finish the study, and how difficult it will be to find sources and data on the issue. Before proceeding to the following level, it is advisable to consult with your thesis supervisor<br/></p><h2 id="4dbe088d-0414-45b5-9a94-a00bd5692d6d" class=""><mark class="highlight-orange">Step 2: Identify a problem.</mark></h2><p id="86da656c-fc4d-4a5f-a84b-d2aeb52b1b4f" class="">The issue might be a practical one, such as a broken process or practice, an area of worry in an organization&#x27;s performance, or a challenge encountered by a certain group of individuals in society.</p><p id="51751d79-31d7-4261-aac9-d05ddd700ab2" class="">Alternatively, you may look into a theoretical issue, such as an unexplored phenomenon or relationship, a conflict between multiple models or theories, or an unsolved discussion among academics.</p><p id="4a3c9851-032c-4910-a14d-226ed461a41f" class="">A problem statement can help you put the situation into context and outline your objectives. This section discusses who is affected by the problem, why study is required, and how your research project will help to its resolution.</p><h2 id="a9a827ea-300e-4f34-ab4a-5c2f69dfe1c4" class=""><mark class="highlight-orange"><strong>Step 3: Formulate research questions.</strong></mark></h2><p id="047de890-01ac-4e92-aa87-3bfdeed44978" class="">Following that, you must develop one or more research questions based on the problem statement. These are specific to what you wish to learn. They may choose to describe, compare, evaluate, or explain the research problem.<br/>A good research topic should be precise enough that you can properly address it using acceptable qualitative or quantitative research methodologies. It should also be difficult enough to necessitate extensive inquiry, analysis, and argumentation. Questions that may be addressed with a simple &quot;yes/no&quot; or with readily available information are insufficient for a thesis or dissertation.<br/>In some forms of research, you may also be required to construct a conceptual framework and testable hypotheses at this stage.<br/></p><h2 id="b6199ef7-8318-4e81-995f-7ce112a3f9e4" class=""><mark class="highlight-orange"><strong>Step 4: Create a Research Design</strong></mark></h2><p id="4f10f66c-7052-476c-b1da-c45dd388999a" class="">A research design is a technique for utilizing empirical data to answer your research topic. Developing a study design entails making judgments on:</p><ul id="b494303b-30cb-4d64-9a28-422d3e7c1984" class="bulleted-list"><li style="list-style-type:disc">Your overall research objectives and approach</li></ul><ul id="61be77f9-8f17-4f4e-aee9-141989f299b9" class="bulleted-list"><li style="list-style-type:disc">Whether you&#x27;ll use primary or secondary research</li></ul><ul id="45056fa3-77f2-4ea0-a494-24e8f87fbc36" class="bulleted-list"><li style="list-style-type:disc">Your sampling methods or criteria for selecting subjects</li></ul><ul id="474dabf5-72f3-4785-b4c7-c3b368884a23" class="bulleted-list"><li style="list-style-type:disc">Your data collection methods</li></ul><ul id="70d7f79a-3a33-415f-9076-76cbf6b5e1ab" class="bulleted-list"><li style="list-style-type:disc">The procedures you&#x27;ll use to collect data</li></ul><ul id="c85cb5e9-a92f-43dd-8ce9-f8344711a4c2" class="bulleted-list"><li style="list-style-type:disc">Your data analysis methods</li></ul><p id="15633646-2938-47d4-84e4-e4ab6aac6142" class="">A well-planned research design ensures that your procedures correspond to your research aims and that you employ the appropriate type of analysis for your data.</p><p id="6679f826-ac22-4e90-8eac-cb7d57b73356" class="">A study design may be assigned as a stand-alone assignment, or it may be part of a broader research proposal or other project. In either case, you should carefully assess which strategies are most suited to solving your issue.<div class="indented"><h3 id="e423da31-f31e-48d3-9b1d-21dec1d1223e" class=""><em><mark class="highlight-yellow">I. </mark></em><em><mark class="highlight-yellow"><strong><strong>Consider your aims and approach.</strong></strong></mark></em></h3><p id="c56ef226-ac83-4196-b141-863bd0fa44af" class="">Before you begin designing your study, you should have a firm grasp of the research subject you wish to examine.<br/>There are several approaches you might take to answer this issue. Your study design decisions should be guided by your objectives and priorities—start by considering what you want to achieve.<br/></p><table id="fd0b1ce8-9587-40e4-91c4-9a8f22f67096" class="simple-table"><thead class="simple-table-header"><tr id="0e8999ba-98a7-4060-b02e-5713cc8b8841"><th id="`=OH" class="simple-table-header-color simple-table-header" style="width:339px"><strong>Qualitative approach</strong></th><th id="LAu{" class="simple-table-header-color simple-table-header" style="width:324px"><strong>Quantitative approach</strong></th></tr></thead><tbody><tr id="1109d796-8f09-402a-aebb-b3c8fe68a55a"><td id="`=OH" class="" style="width:339px">• Be aware of subjective feelings, ideas, and conceptions <br/>• Gain an in-depth understanding of a given area or culture <br/>• Investigate unsolved issues and develop new ideas<br/></td><td id="LAu{" class="" style="width:324px">• Calculate and characterize frequencies, averages, and correlations for various types of variables. <br/>• Put assumptions regarding variable relationships to the test.<br/>• Assess the efficacy of a new therapy, program, or product.<br/></td></tr></tbody></table><p id="cadf7da0-aea8-49f9-ae24-6c3cd442ed36" class="">The first decision you must make is whether to use a qualitative or quantitative method.</p><p id="da4ae383-0403-4238-bbae-eacec0980da4" class="">Qualitative research designs are more adaptable and inductive, allowing you to change your approach based on what you discover throughout the research process.<div class="indented"><p id="0ac6b332-a1cb-47e7-aaea-101ec49094ae" class=""><mark class="highlight-blue"><em>Example of qualitative research A qualitative method makes the most sense if you want to produce fresh ideas for online teaching tactics. This sort of study may be used to investigate exactly what teachers and students struggle with in distant classrooms.</em></mark></p></div></p><p id="f57cefe0-5b33-477f-91ef-4aa2a1f40bc9" class="">Quantitative research designs are more set and logical in nature, with variables and hypotheses explicitly stated prior to data collection.<div class="indented"><p id="1eb88866-a132-4b1a-bcf7-d043db277594" class=""><mark class="highlight-blue"><em>Example of quantitative research A quantitative methodology is best suited for testing the effectiveness of an online education method. This sort of study may be used to assess learning outcomes such as grades and test scores.</em></mark></p></div></p><p id="1712cda7-d308-4af4-8b76-a09aa0f07e5f" class="">A mixed-methods design that incorporates parts of both methodologies is also an option. You may acquire a more complete view of the subject you&#x27;re investigating and increase the reliability of your conclusions by integrating qualitative and quantitative information.</p><p id="3afb7d76-6302-4453-ba00-1fde27d4f4f0" class=""><mark class="highlight-brown"><strong>Practical and ethical considerations when designing research</strong></mark></p><p id="ada529b3-8fdb-4544-9a08-9721e7adcfa8" class="">When designing your study, you must consider both scientific and practical aspects. If your study involves humans or animals, you must additionally consider research ethics.</p><ul id="4b0b816b-2db2-4e57-b2ea-c3e674599944" class="bulleted-list"><li style="list-style-type:disc">How much time do you have to collect data and write up the findings of your research?</li></ul><ul id="9a345389-f523-43b4-a588-13322e6a3071" class="bulleted-list"><li style="list-style-type:disc">Will you be able to obtain the data you want (for example, by flying to a certain region or contacting specific people)?</li></ul><ul id="6404db08-1fa7-48fb-a925-3e591805418e" class="bulleted-list"><li style="list-style-type:disc">Do you possess relevant research abilities (for example, statistical analysis or interview techniques)?</li></ul><ul id="c21be5ce-deea-4a90-801b-3287ae50cff9" class="bulleted-list"><li style="list-style-type:disc">Do you require an ethical approval?</li></ul><p id="06e784fd-ee50-43fc-9157-07eb5fde27bf" class="">At each stage of the research design process, make sure that your choices are practically feasible.</p><h3 id="bf059d42-7f56-4d4a-a16a-a32ab10ef747" class=""><em><mark class="highlight-yellow">II. </mark></em><em><mark class="highlight-yellow"><strong><strong>Choose a type of research design</strong></strong></mark></em></h3><p id="a42b6d6a-3e36-4f03-9673-8c09d73e5e7d" class="">There are various sorts of research designs to select from in both qualitative and quantitative techniques. Each category serves as a foundation for the overall form of your study.</p><p id="a3071b39-ffe2-4956-9cc2-3ba1a28a54ec" class=""><mark class="highlight-brown"><strong>Types of quantitative research designs</strong></mark><div class="indented"><p id="0507d9da-cc83-46ce-80f9-92bab9f019ef" class="">Quantitative designs can be split into four main types:</p><ul id="3b9051c3-e154-4a58-bb82-9af84fe368e4" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/methodology/experimental-design/">Experimental</a> and <a href="https://www.scribbr.com/methodology/quasi-experimental-design/">quasi-experimental</a> designs allow you to test cause-and-effect relationships</li></ul><ul id="af10657c-9d7c-4042-93f8-7277ea85ce0c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/methodology/descriptive-research/">Descriptive</a> and <a href="https://www.scribbr.com/methodology/correlational-research/">correlational</a> designs allow you to measure variables and describe relationships between them.</li></ul></div></p><p id="6831c3de-fc8f-4c90-8687-5e2e3f154226" class="">You may acquire a detailed picture of traits, trends, and relationships as they exist in the actual world using descriptive and correlational approaches. However, no inferences can be drawn regarding cause and effect (since correlation does not indicate causality).</p><p id="f9bdb41d-5708-422e-9d8b-62630b474a54" class=""><em>Correlational design example </em></p><table id="758146d6-6001-40ab-b093-60ee503e4cd5" class="simple-table"><thead class="simple-table-header"><tr id="1bad7b95-0a98-43c3-bac0-bee3566785ab"><th id="?GBU" class="simple-table-header-color simple-table-header"><strong>Type of design</strong></th><th id="my\Z" class="simple-table-header-color simple-table-header" style="width:510px"><strong>Characteristics</strong></th></tr></thead><tbody><tr id="da9388f0-5609-49ab-bdb2-35f5283ff8ac"><th id="?GBU" class="simple-table-header-color simple-table-header"><strong>Experimental</strong></th><td id="my\Z" class="" style="width:510px">• Tests causal linkages by altering an independent variable and assessing its influence on a dependent variable<br/>• Subjects are randomized to groups at random <br/>• Usually performed in a controlled setting (e.g., a lab)<br/></td></tr><tr id="ce58b9f8-ae5d-402f-939f-8df693faabab"><th id="?GBU" class="simple-table-header-color simple-table-header"><strong>Quasi-experimental</strong></th><td id="my\Z" class="" style="width:510px">·         Often includes comparing the outcomes of pre-existing groups<br/>·         Often undertaken in a natural context (better ecological validity)<br/>·         Similar to experimental design, but without random assignment<br/></td></tr><tr id="6343a2d6-c97f-4757-b3a8-8e252cb6aeab"><th id="?GBU" class="simple-table-header-color simple-table-header"><strong>Correlational</strong></th><td id="my\Z" class="" style="width:510px">• Used to determine if (and to what extent) variables are connected.<br/>• Variables are measured without being influenced.<br/></td></tr><tr id="f48dcb56-b555-40f0-8c3d-ebd7e507e109"><th id="?GBU" class="simple-table-header-color simple-table-header"><strong>Descriptive</strong></th><td id="my\Z" class="" style="width:510px">• Used to define traits, averages, trends, and so forth. <br/>• Variables are measured without being influenced.<br/></td></tr></tbody></table><p id="c15fc511-6bf6-4287-89ac-bfb152540df2" class=""><em>You could use a correlational design to find out if the rise in online teaching in the past year correlates with any change in test scores.</em></p><p id="967ddd94-113d-42d0-9230-8d1356f33b3d" class="">However, this approach cannot establish a causal link between the two variables. Many other factors, such as increasing stress and health difficulties among kids and instructors, might have affected any decrease in test performance.</p><p id="014807f0-3fbb-4a35-a2d9-7a0cee6a644f" class="">Experiments are the most powerful technique to evaluate cause-and-effect relationships without worrying about other variables impacting the results. Their controlled circumstances, on the other hand, may not necessarily reflect how things function in the actual world. They are frequently more complex and costly to adopt.</p><p id="b16a1ca7-ebcb-4d0c-b374-9e8e7514709a" class=""><mark class="highlight-blue"><em>Experimental design example: In an experimental design, you could gather a sample of students and then randomly assign half of them to be taught online and the other half to be taught in person, while controlling all other relevant variables.</em></mark></p><p id="33d87123-bede-4644-aaa9-096cc1ed1593" class="">By comparing their test scores, you may be more convinced that any change in scores was caused by the teaching approach (rather than other variables).</p><p id="7d1f2d4b-070f-45e8-bc03-dc106af70f4c" class=""><mark class="highlight-brown"><strong>Types of qualitative research designs</strong></mark></p><p id="b7c68f1f-c5e4-4bbb-be5e-ef461cd07335" class="">Qualitative designs are looser in their definition. This method focuses on getting a comprehensive, thorough understanding of a certain context or phenomenon, and it allows you to be more creative and flexible in designing your study.</p><table id="7132914d-e672-4e08-97ba-79fc58f19010" class="simple-table"><thead class="simple-table-header"><tr id="cb9518b0-5f6c-4a5a-9687-b1d93001ea1f"><th id="pE|`" class="simple-table-header-color simple-table-header" style="width:126.5px"><strong>Type of design</strong></th><th id="dvdb" class="simple-table-header-color simple-table-header" style="width:540px"><strong>Purpose and characteristics</strong></th></tr></thead><tbody><tr id="53acf7f3-20ca-4d81-9031-a862386d6622"><td id="pE|`" class="" style="width:126.5px"><a href="https://www.scribbr.com/methodology/case-study/"><strong>Case study</strong></a></td><td id="dvdb" class="" style="width:540px">In-depth investigation of a certain subject (for example, a location, event, or organization).<br/><br/>Data may be gathered through a number of sources and ways.<br/><br/>Concentrates on acquiring a comprehensive grasp of the situation.<br/></td></tr><tr id="fc6e7101-f408-4d4a-8b8f-da74af143a5c"><td id="pE|`" class="" style="width:126.5px"><a href="https://www.scribbr.com/methodology/ethnography/"><strong>Ethnography</strong></a></td><td id="dvdb" class="" style="width:540px">Extensive immersion and careful observation are used to acquire data on the culture of a certain community or group.<br/><br/>Is concerned with describing and understanding beliefs, norms, social processes, and so on.<br/></td></tr><tr id="4c1ab9d5-1e35-40f8-a9db-e9b1164da2c8"><td id="pE|`" class="" style="width:126.5px"><strong>Grounded theory</strong></td><td id="dvdb" class="" style="width:540px">Inductively develops a hypothesis by rigorously analyzing qualitative evidence.</td></tr><tr id="57d09e05-a6e8-45ca-8413-e1723c81ede3"><td id="pE|`" class="" style="width:126.5px"><strong>Phenomenology</strong></td><td id="dvdb" class="" style="width:540px">Attempts to comprehend a phenomenon or occurrence by articulating the lived experiences of participants.</td></tr></tbody></table><p id="881d13c2-dfb6-4e65-8ed3-dbfa4d8ed6e0" class="">The table below depicts some of the most popular forms of qualitative design. They frequently use similar tactics to data collecting but concentrate on distinct areas when analyzing the data.</p><h3 id="80dba1be-da08-4f8c-9531-7e48025dba07" class=""><em><mark class="highlight-yellow">III. Identify your population and sampling method</mark></em></h3><p id="417e28eb-c49f-457e-9c62-b7498279b8d5" class="">Your research design should clearly specify who or what your study will focus on, as well as how you will select participants or subjects.</p><p id="ff3c8e44-f063-4c33-9704-84d59a55d018" class="">In research, a population is the total group about whom you wish to make conclusions, whereas a sample is the smaller group of people from whom you will gather data.</p><p id="32493ea1-3bdd-48be-a4c1-5d4f999de7c7" class=""><mark class="highlight-blue"><em>Defining the population A population may be anything you choose to examine, including plants, animals, organizations, texts, nations, and so on. It usually refers to a group of persons in the social sciences.</em></mark></p><p id="81e7dd1e-c633-403a-bb7f-009e6298ae9f" class="">The more exactly your demographic is defined, the easier it will be to get a representative sample.</p><p id="b2511ba7-d58a-49a6-a2d5-6b438049652a" class="">You may confine the group to 9th-grade pupils in low-income neighborhoods of New York to make the research more manageable and to draw more specific results.</p><p id="4449f525-3410-48fd-ae85-340a1bbba609" class=""><strong><mark class="highlight-brown">Sampling methods</mark></strong></p><p id="49690397-c195-4a18-a326-32e4070d2972" class="">Even with a narrowly defined population, collecting data from every person is unusual. Instead, you&#x27;ll get information from a sample.</p><p id="ecf15f98-82ee-4b86-9af8-cd196d564c83" class="">There are two methods for selecting a sample: probability sampling and non-probability sampling. The sample strategy you select influences how confidently you can generalize your findings to the entire population.</p><table id="d3a1258c-ded8-46ed-a0f7-3c28dc6beca5" class="simple-table"><tbody><tr id="08add682-8caa-4568-a251-9c72f2a94bd6"><td id="DXKi" class="" style="width:340px"><strong>Probability sampling</strong></td><td id="@U{f" class="" style="width:321px"><strong>Non-probability sampling</strong></td></tr><tr id="c4da1c09-6fef-48d9-bf3d-2890806a1824"><td id="DXKi" class="" style="width:340px">• Sample is chosen at random <br/>• Primarily employed in quantitative research <br/>• Allows for strong statistical conclusions about the population<br/></td><td id="@U{f" class="" style="width:321px">• Non-random sample selection <br/>• Used in both qualitative and quantitative research <br/>• Easier to obtain, but the higher danger of research bias<br/></td></tr></tbody></table><p id="34260ea7-4da7-48af-9633-902927d4c9b2" class="">Probability sampling is the most statistically correct approach, but it is typically difficult to execute unless you have a very small and easily accessible population.</p><p id="28f79d2a-9d84-4124-9f59-657732bc5532" class="">Many studies utilize non-probability sampling for practical reasons, but it&#x27;s crucial to be aware of the limits and carefully analyze potential biases. Always make an attempt to collect a sample that is as representative of the population as feasible.</p><p id="01c37462-05c3-4a49-8e2f-d901a4a2e961" class=""><mark class="highlight-brown"><strong>Case selection in qualitative research In some types of qualitative designs, sampling may not be relevant.</strong></mark></p><p id="c5a537ac-7108-4bb7-ab7b-478815ae387c" class="">For instance, your goal is to thoroughly grasp a particular environment in an ethnography or case study, not to generalize to a community. Instead of sampling, you may just try to gather as much information as you can on the context you are researching.</p><p id="3cd15a71-9d0c-413f-91ba-d4036a3fe0c8" class="">You must still carefully analyze your choice of case or community in these sorts of designs. You should be able to articulate why this specific situation is appropriate for resolving your research question.</p><p id="4daaef38-1b60-4a18-bd4a-5564fe426846" class="">You may, for instance, select a case study that highlights a novel or overlooked facet of your research issue, or you could select a number of instances that are strikingly similar to one another or that are vastly dissimilar from one another in order to compare them.</p><h3 id="7786e930-194f-4ae9-a053-909f1320f87d" class=""><em><mark class="highlight-yellow">IV. Choose your data collection methods</mark></em></h3><p id="5f95e93e-8b3a-4a6b-b2d7-1d31205b4be9" class="">Methods for collecting data are strategies to systematically measure variables and collect data. They provide you the chance to learn about your research topic firsthand and to develop novel thoughts.</p><p id="9d2d6bb1-f45a-4dfa-b353-794029bf750b" class="">You can employ a single data-gathering technique or a combination of techniques in the same study.</p><p id="c42189c3-822d-46d9-b730-65af37c852cd" class=""><mark class="highlight-brown"><strong>survey techniques:</strong></mark></p><p id="cca5320b-e504-4f4d-beee-69f2cc2b9c64" class="">Through surveys, you may directly question individuals about their opinions, behaviors, experiences, and qualities. The two primary survey techniques are questionnaires and interviews.</p><table id="91a7f96f-5edc-454e-8613-4ce05167ea21" class="simple-table"><thead class="simple-table-header"><tr id="6ea8950c-b0a3-40a6-b3c5-7bb0e37fbe0e"><th id="ee:?" class="simple-table-header-color simple-table-header" style="width:351px"><strong>Questionnaires</strong></th><th id="mEm]" class="simple-table-header-color simple-table-header" style="width:309px"><strong>Interviews</strong></th></tr></thead><tbody><tr id="984f5ca5-b9ba-4899-a8c9-e89c5b5ad3a9"><td id="ee:?" class="" style="width:351px">More prevalent in quantitative research<br/><br/>Can be disseminated by phone, internet, mail, or in person <br/><br/>Typically include closed-ended questions with few alternatives<br/><br/>Numerous persons can provide consistent data for collection.<br/></td><td id="mEm]" class="" style="width:309px">Usually enable participants to respond in their own words. <br/><br/>More prevalent in qualitative research.<br/><br/>Conducted by the researcher in person, via phone, or online.<br/><br/>Ideas can be explored in detail with a smaller group (e.g., a focus group).<br/></td></tr></tbody></table><p id="a19746ed-9766-4cad-8f45-97b2e4c58dac" class=""><mark class="highlight-brown"><strong>Observer techniques</strong></mark></p><p id="d22b7ead-91c1-4edb-b43c-4e020ee5263f" class=""><em>With observational research, you may gather data covertly by observing traits, activities, or social interactions rather than relying on self-reporting.</em></p><p id="80fdb27a-518e-49fa-8702-3033267c80ff" class="">You can perform observations in real-time while taking notes, or you can record your observations on audio and/or video for subsequent study. Quantitative or qualitative terms may be used.</p><table id="c474e39d-59dc-45c3-98e9-d935d4ccfa55" class="simple-table"><thead class="simple-table-header"><tr id="523dfe2c-3e17-40ea-a697-e62078cc73ef"><th id="EQ}Y" class="simple-table-header-color simple-table-header" style="width:348px"><strong>Quantitative observation</strong></th><th id=":R[J" class="simple-table-header-color simple-table-header" style="width:315px"><a href="https://www.scribbr.com/methodology/qualitative-observation/"><strong>Qualitative observation</strong></a></th></tr></thead><tbody><tr id="d5d115c2-97f0-46bc-bd88-24ba6983552a"><td id="EQ}Y" class="" style="width:348px">Predetermined categories and criteria; systematic counting or measurement</td><td id=":R[J" class="" style="width:315px">Taking thorough notes and drafting in-depth descriptions.<br/><br/>Recording all pertinent observations<br/></td></tr></tbody></table><p id="c3f59d99-1d28-48fc-9d12-f37a7d65369e" class=""><mark class="highlight-brown"><strong>Other methods of data collection:</strong></mark></p><p id="4955b724-007b-44ea-b5e7-722b001eaa4d" class="">There are many other ways you might collect data depending on your field and topic.</p><table id="1ad25462-3cfd-4980-97dc-5184433f305a" class="simple-table"><thead class="simple-table-header"><tr id="a0646275-30d2-4bdc-9b2f-c08034bfdd28"><th id="[Bc}" class="simple-table-header-color simple-table-header"><strong>Field</strong></th><th id="}C@H" class="simple-table-header-color simple-table-header" style="width:487px"><strong>Examples of data collection methods</strong></th></tr></thead><tbody><tr id="84174caf-1e81-472d-a997-692a9d9a57db"><td id="[Bc}" class=""><strong>Media &amp; communication</strong></td><td id="}C@H" class="" style="width:487px">Collecting a sample of texts (e.g., speeches, articles, or social media posts) for data on cultural norms and narratives</td></tr><tr id="9a5d04bb-06b1-49d3-b36c-a487e006ca44"><td id="[Bc}" class=""><strong>Psychology</strong></td><td id="}C@H" class="" style="width:487px">Using technologies like neuroimaging, eye-tracking, or computer-based tasks to collect data on things like attention, emotional response, or reaction time</td></tr><tr id="258e4559-fbf9-4d1f-baad-ce2759e53cbc"><td id="[Bc}" class=""><strong>Education</strong></td><td id="}C@H" class="" style="width:487px">Using tests or assignments to collect data on knowledge and skills</td></tr><tr id="de71965e-ed39-41a0-9276-c415c193b767"><td id="[Bc}" class=""><strong>Physical sciences</strong></td><td id="}C@H" class="" style="width:487px">Using scientific instruments to collect data on things like weight, blood pressure, or chemical composition</td></tr></tbody></table><p id="efe6ed9d-2d21-46f5-aab4-82fd1f950ea8" class="">If you&#x27;re not sure which data-gathering techniques will suit your study design the best, consider reading several publications in the area to see what techniques others have done.</p><p id="e212caee-bc01-4a8d-864b-0328bbe1ad67" class=""><mark class="highlight-brown"><strong>Secondary data</strong></mark></p><p id="55d0c0b0-ea7c-4394-ac84-0267b76b430e" class="">Use secondary data that other researchers have previously gathered, such as datasets from government surveys or earlier studies on your issue, if you don&#x27;t have the time or resources to gather data from the community you&#x27;re interested in.</p><p id="968e2998-e901-4a0f-a23b-75da041ef791" class="">You can do your own analysis using this raw data to respond to fresh research issues that the first study did not address.</p><p id="621b7e3d-64ff-4d31-99f8-4f2de61c8300" class="">By accessing considerably bigger and more diverse samples than you could by gathering your own, using secondary data helps broaden the scope of your study.</p><h3 id="80b2e556-cae9-49c5-a95d-3719ccde2283" class=""><em><mark class="highlight-yellow">V. Plan your data collection procedures</mark></em></h3><p id="d2827b9a-8e26-44f4-9187-9bd549d765ba" class="">You must choose your approaches and then carefully prepare how you will use them in order to get data that is reliable, accurate, and unbiased.</p><p id="a83f36d0-ab5d-43c2-ab45-54c1aa7a8282" class="">Planning systematic methods is crucial in quantitative research since it requires accurate variable definition and good measurement validity and reliability.</p><p id="b154e5f9-8fc4-4f5f-9eff-6fd712c7e4b3" class=""><strong><mark class="highlight-brown">Operationalization</mark></strong></p><p id="0f5cad60-0633-4588-a426-080310ac9c7f" class="">Age and height are two readily quantifiable factors. However, you&#x27;ll frequently be dealing with more ethereal ideas like competence, fear, or contentment. These hazy concepts must be operationalized in order to become quantifiable indicators.</p><p id="7c7e0b99-64ec-4d23-a2cf-2fd7f3469b45" class="">Additionally, you may decide to utilize or modify pre-existing tools created to assess the idea you&#x27;re interested in, such as inventories or questionnaires with proven reliability and validity.</p><p id="5bc9ed3a-723c-4d6f-96ea-033bc306945a" class=""><mark class="highlight-brown"><strong>Reliability and validity</strong></mark></p><p id="4a92704e-fbf1-4fa9-a178-547367aae5cf" class="">Validity indicates that you are truly measuring the idea you are interested in, whereas reliability indicates that your results can be reliably replicated.</p><table id="6e01ef13-ffb1-45f9-a633-80159b063384" class="simple-table"><thead class="simple-table-header"><tr id="4f006dc7-d764-4623-8114-0dd77bd73864"><th id=";nvP" class="simple-table-header-color simple-table-header" style="width:345px"><strong>Reliability</strong></th><th id="BMKG" class="simple-table-header-color simple-table-header" style="width:314px"><strong>Validity</strong></th></tr></thead><tbody><tr id="654a98d3-ca78-4e32-92ac-ab67f48a5e50"><td id=";nvP" class="" style="width:345px">Does your measurement consistently capture the same idea over time?<br/><br/>Does it result in the same outcomes across contexts?<br/><br/>Do all questions assess the same idea exactly?<br/></td><td id="BMKG" class="" style="width:314px">Do your measuring tools evaluate every part of the idea? (valid content)<br/><br/>Is there a correlation between it and several metrics of the same concept? (Validation of criteria)<br/></td></tr></tbody></table><p id="4d29d868-a38b-450f-9d1a-012389f34a51" class="">Your measuring materials should be properly thought out and researched in order to produce valid and trustworthy findings. Make sure you follow the same processes in the same order for each participant by planning your procedures.</p><p id="7f09ded7-9022-4c84-ade8-116084264c71" class="">Conducting a pilot study enables you to verify the validity and reliability of a new questionnaire or other instrument before it is used to test a particular idea.</p><p id="830a8538-80d8-4526-9a89-b26d8cfd16a6" class=""><mark class="highlight-brown"><strong>Sampling procedures</strong></mark></p><p id="9fba60b8-7112-4015-b4cc-45cb879047bd" class="">You must have a clear strategy for how you&#x27;ll actually get in touch with and recruit the sample you&#x27;ve chosen, in addition to selecting the best sampling technique.</p><p id="6c5b07a9-7c62-44e9-b93b-22408ca7b4d4" class="">If you&#x27;re employing a probability sampling technique, it&#x27;s crucial that each person who is arbitrarily chosen takes part in the research. How can a high response rate be guaranteed?</p><p id="0454b358-a63a-436d-888b-39f4f5faf8cd" class=""><mark class="highlight-brown"><strong>Data management</strong></mark></p><p id="705e05cc-f508-4b97-b1d3-2a342b0b27ea" class="">To organize and store your data, you need also to make a data management plan.</p><p id="0e1b7718-f6f2-4d1b-bc35-fe9449adc829" class="">Will you have to enter data for observations or transcribe interviews? Any sensitive data should be anonymized, protected, and frequently backed up.</p><p id="10f6b830-a7fb-40bf-9f6e-44d4afbf39f1" class="">When it comes to analyzing your data, keeping it organized can speed up the process. It can also support and expand on your results by other researchers (high replicability).</p><h3 id="d210a556-a67e-4f12-a7a5-d4f206c2d568" class=""><em><mark class="highlight-yellow">VI. Decide on your data analysis strategies.</mark></em></h3><p id="c22ed530-fb7b-4102-a8bc-54e6866bde6c" class="">Your research question cannot be answered by raw data alone. The preparation of your data analysis strategy is the final stage in developing your research.</p><p id="4905f57f-f4b5-4025-a637-d8f70126283f" class=""><mark class="highlight-brown"><strong>Quantitative data analysis</strong></mark></p><p id="50d9cd64-0c50-40aa-b717-882a3b068c53" class="">You&#x27;ll most likely employ some sort of statistical analysis when doing quantitative research. You may evaluate hypotheses, estimate values, and summarize your sample data using statistics.</p><p id="f16cc819-2498-45b0-9198-fd09af30349c" class="">Using descriptive statistics, you can summarize your sample data in terms of:</p><ul id="846122f9-841c-40c6-a068-ccc38d62db88" class="bulleted-list"><li style="list-style-type:disc">The data&#x27;s distribution (for instance, the frequency of each test result);</li></ul><ul id="2cf88079-f63c-42e5-813e-7d656460f364" class="bulleted-list"><li style="list-style-type:disc">The data&#x27;s axis of variation (the average score is described by the mean, for example).</li></ul><ul id="6751bbd0-3cb8-4634-a469-c9dd793708c3" class="bulleted-list"><li style="list-style-type:disc">The data&#x27;s variability (for instance, the standard deviation, which explains how evenly distributed the scores are);</li></ul><p id="93992356-b516-4ae0-a5a5-95b4873d89ba" class="">The specific calculations you can do depend on the<a href="https://www.scribbr.com/statistics/levels-of-measurement/"> level of measurement</a> of your variables.</p><p id="e120e3d7-62f7-4127-aaaf-ee4eb4faa07b" class="">Using inferential statistics, you can:</p><ul id="4c784137-0fdd-46d8-ad64-4f957bfcf303" class="bulleted-list"><li style="list-style-type:disc">Utilizing the information from your sample, estimate the population.</li></ul><ul id="ddbc44a7-6f5b-43d2-a6d6-3188337a07b1" class="bulleted-list"><li style="list-style-type:disc">Investigate potential relationships between variables.</li></ul><p id="a55aa915-d84f-4c73-aa5e-72e269c99ab2" class="">While comparison tests, like t-tests and ANOVAs, seek for differences in the results of several groups, regression, and correlation tests look for relationships between two or more variables.</p><p id="d61c76a8-e6a9-467a-9c9f-658ef1e62f42" class="">Several elements of your study design, such as the kinds of variables you&#x27;re working with and the distribution of your data, will influence the statistical test you choose.</p><p id="e34a3fd6-f696-4e4a-98b5-5b96e8ea70a2" class=""><strong><mark class="highlight-brown">Qualitative data analysis</mark></strong></p><p id="6652cde5-0765-4e43-ac26-2eb6926b52cd" class="">Your data will often be quite packed with information and ideas while conducting qualitative research. You must carefully go over the data, assess its significance, spot trends, and extract the portions that are most pertinent to your research issue rather than just summarize it in numbers.</p><p id="88f7996f-de76-410c-9104-51d84e122161" class="">Two of the most common approaches to doing this are thematic analysis and discourse analysis.</p><table id="f818d147-db39-4ce7-956f-930b495f95e3" class="simple-table"><thead class="simple-table-header"><tr id="c69ed3af-4db4-4b15-9817-7b2d9b1b670f"><th id="cr?I" class="simple-table-header-color simple-table-header"><strong>Approach</strong></th><th id="hGoO" class="simple-table-header-color simple-table-header" style="width:536px"><strong>Characteristics</strong></th></tr></thead><tbody><tr id="32075c51-8c89-449b-b4ad-fcdabce7d225"><td id="cr?I" class=""><strong>Thematic analysis</strong></td><td id="hGoO" class="" style="width:536px">• Focuses on the content of the data and involves organizing and coding it to find major topics</td></tr><tr id="bf334ff9-84b4-4181-a179-2c3aa8d15481"><td id="cr?I" class=""><strong>Discourse analysis</strong></td><td id="hGoO" class="" style="width:536px">• Places emphasis on contextualizing the facts.<br/>• Entails examining several aspects of communication (such as language, structure, tone, etc.)<br/></td></tr></tbody></table><p id="9dad1192-f940-4918-a0c3-ad3dd6a50764" class="">Depending on the objectives of your research, there are several additional approaches to qualitative data analysis. Try reading several qualitative research articles on your subject to get a sense of possible methodologies.</p><h2 id="83c259a8-e545-4036-a5ce-1b41f5d6fa86" class=""><mark class="highlight-orange">Step 5: Write a research proposal</mark></h2><p id="8451cef9-ebb5-456d-a954-530b3f3086c2" class="">After finishing these procedures, you are finally prepared to finish a research proposal. The background, relevance, aim, and plan of your study are described in the proposal.</p><p id="d023a942-3950-4a96-b5ba-b2e488e669f8" class="">A literature review that demonstrates how your project will fit into previous research on the subject should be included in the proposal along with an outline of the background, issue statement, and research questions. The study design section outlines your strategy and provides detailed instructions for what you will accomplish.</p><p id="15eefaca-aeb7-4114-b948-0d403bd1c638" class="">The proposal will serve as a roadmap for writing your thesis or dissertation and may need to be approved by your advisor before you begin.</p><hr id="eb92865d-ae63-4342-9f89-87ee97cfb2d6"/><ul id="1b7565f4-57e3-43cf-90d0-a38c726bdcae" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/category/methodology/">https://www.scribbr.com/category/methodology/</a></li></ul><ul id="bfe732f7-630b-4649-984c-cd2f94b52896" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/category/methodology/">https://www.scribbr.com/category/methodology/</a></li></ul><ul id="71fbbede-322c-4244-9bf3-cf7015c6ea62" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/methodology/research-design/">https://www.scribbr.com/methodology/research-design/</a></li></ul><ul id="12fa5673-9493-4886-849c-eda3ca3f413b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/legal/privacy-policy/previous-version/">https://www.scribbr.com/legal/privacy-policy/previous-version/</a></li></ul><h3 id="b881bf6f-4b0f-4885-9c36-a57a09852d03" class=""><mark class="highlight-orange">References/Further Reading:</mark></h3><ul id="9f57e05b-d227-488c-8ccb-298acc4bbbdb" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/category/methodology/">https://www.scribbr.com/category/methodology/</a></li></ul><ul id="6fa71753-8e44-45b0-9ead-34b45cfc5667" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/methodology/research-design/">https://www.scribbr.com/methodology/research-design/</a></li></ul><ul id="c7841210-5145-4114-8682-c396e8dbf003" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.scribbr.com/legal/privacy-policy/previous-version/">https://www.scribbr.com/legal/privacy-policy/previous-version/</a></li></ul></div></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

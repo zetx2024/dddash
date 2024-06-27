@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>How to Excel in Competitions: Summarizing &amp; Representing your Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fde32c93-f1f0-49b4-b6b4-63b16becaf46" class="page serif"><header><img class="page-cover-image" src="How%20to%20Excel%20in%20Competitions%20Summarizing%20&amp;%20Represe%20fde32c93f1f049b4b6b463b16becaf46/The_Solvay_Conference_probably_the_most_intelligent_picture_ever_taken_1927_(2).jpg" style="object-position:center 41.949999999999996%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🎖️</span></div><h1 class="page-title">How to Excel in Competitions: Summarizing &amp; Representing your Project</h1><p class="page-description"></p></header><div class="page-body"><p id="fcd1caee-b253-41fc-a3fc-e08a706a6308" class="">After choosing the right competition and filling out the participation form, comes the process of finding the best way to showcase your project and its attractions. We will not discuss here how to make a research project since the key details have been covered previously. Moreover, at this stage, you most likely have a project ready but need to make some refinements and practice presenting it in front of a group of professionals. Instead, we will cover essential points that can help you present better and leave a better lasting impression on the evaluator.</p><h2 id="da63d641-00e8-48bb-8bc9-fc9f050a570b" class=""><mark class="highlight-orange">Summarizing your Project:</mark></h2><p id="e2a9332d-7a18-4d25-8cfa-936eba756488" class="">Most research and project competitions often ask you to submit a short description of your project. This can sometimes be just the abstract of your project. Regardless, there are various tips you should consider to ensure your project summary is effective as possible.</p><ul id="63fe6a99-8c04-443f-a152-d4fd5efdbf19" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Do not use up many words for describing the mechanism of your project:</strong></mark> Although the mechanism/the methodology is the core part of your project, it can often be distracting from the key points you want to deliver and the main innovations and improvements you made. Subsequently, mention the methodology in brief and focus mainly on what you changed compared to other projects.</li></ul><ul id="fc2e43c9-68e3-4e90-8df5-c6ce8605fef2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>State the main problem your project solves:</strong></mark> Although this tip is straightforward and slightly obvious, many participants often forget to state clearly the problem that the project solves and its severity. Avoid mentioning statistics or specific numbers and depend on using concise yet accurate vocabulary to clarify the problem’s significance in a few words.</li></ul><ul id="c2416a39-d50a-4d28-8ae5-a2beea434fec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Avoid generic descriptions and adjectives:</strong></mark> Words like “good” and “impressive” do not give any convincing information about the performance of your project. Further, their meaning is highly subjective and depends on the context the reader assumes, which may lead to undesired ambiguity. If you aim to illustrate the success of your project, mention key results and be more specific in your descriptions by using varied vocabulary that suits what you are describing.</li></ul><ul id="22a1d1f6-95f7-4617-a2b2-a301e3360b59" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Be quantitative when describing the main findings and focus on improvements: </strong></mark>Imagine you are in the role of the evaluator, and you read the following: “The project achieved much better results and had excellent performance”. Questions that may arise include “What does “better results” mean? For instance, how significantly did the production of X change?” and “How does your project compare with other previous projects? What new changes has it made? What problems has it solved?”</li></ul><ul id="72dd8462-cb48-4aaf-be78-4fb0d848cc4d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>State the approach, rather than details:</strong></mark> It is very difficult to write down details given the limited space for the summary and the short time the reviewer spends on each application while reviewing high numbers of applications. It is highly probable that if you write technical details about your project not directly linked to the main findings, then you will lose the evaluator’s attention and even interest. Hence, being general while focusing on the key points that distinguish your project will help improve the chances of getting your project noticed.</li></ul><ul id="8b2047a0-0667-4e56-adf6-b3866209fd5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-brown"><strong>Do not use acronyms or initials (such as PFD, A.R.G.) for technical terms: </strong></mark>The summary should be a standalone text that the reader should understand without examining your poster/paper or any other sections related to your project. Hence, you should never assume that the reader understands what these abbreviations stand for unless it is very clear with no possible ambiguity, and non-technical (e.g.: U.S.A., cm).</li></ul><h2 id="b4ea10dd-c15c-42d9-9cf3-ad011040ea65" class=""><mark class="highlight-orange">Representing your project:</mark></h2><p id="d8a7a683-7bb4-4c3a-9c52-2552f7e824ef" class="">Great news! You have been selected as a finalist and you will present your project for 10-15 minutes in front of qualified evaluators. What should you do to prepare?</p><p id="7e92f01c-a5cf-4c1d-8ec1-cec90cbabda7" class="">First, you should understand and analyze what the evaluator wants to see and hear. Do they want to hear a monotone monologue for 10 minutes in which you describe your project beginning from the abstract and reaching the conclusion, with no visual aid that helps them imagine accurately how your project works or what are its applications?</p><p id="518e5a90-79e8-48dc-9f33-8a7bebf7b48e" class="">Or do they want to watch an effective presentation that highlights the problem to be solved and how the project solves issues found in previous solutions, all of this while maintaining a varying yet clear tone and using body language effectively as well as supporting what is said with illustrations and even small models?</p><p id="00b93eac-f543-49a7-85cc-f59c109e1a2f" class="">There are certain qualities that the evaluator looks for that you may not notice. In general, the key thing you should do to attract the evaluator and improve the grades.</p><p id="11c4cbef-0ae0-4336-becc-1643dbbdec38" class="">they will give you is showing to them that your project has the qualities they are searching for. The evaluator generally evaluates the following:</p><ul id="887a5357-0fcc-4ffc-a045-33c8af0a6ded" class="bulleted-list"><li style="list-style-type:disc">Problem statement: Did they describe the problem to be solved clearly yet concisely? Do their statements make me eager to know how this problem can be solved?</li></ul><ul id="0dfd417f-7b78-4075-9820-dfa1eec09223" class="bulleted-list"><li style="list-style-type:disc">Background: Is the participant aware of the previous projects that attempted to solve the problem? If so, could they solve some of the critical issues associated with them?</li></ul><ul id="1ed9ce9f-0762-47cb-abf1-8888ec889169" class="bulleted-list"><li style="list-style-type:disc">Clarity and Coherence: Can I follow along with what the participant is saying? Is their presentation ordered in a logical way, with key points being appropriately highlighted? Were any parts of the presentation distracting from the main point? This is especially important. If the evaluator cannot catch up with you and form a clear and organized image of your project, then it is unlikely they will give you high grades. On the other hand, even if a project is simple but the evaluator could understand exactly what is said and follow along perfectly, the project could still receive a high rating.</li></ul><ul id="197f0b89-0590-4608-a6fe-6d4d977dfdd2" class="bulleted-list"><li style="list-style-type:disc">Technical Knowledge: Does the participant show competence in dealing with and understanding the technical terms used? Do they employ accurate terminologies and maybe use effective yet accurate analogies to convey the main message they want to deliver as well as explain important details?</li></ul><ul id="c36329cf-35cf-4948-948a-3f5c20e9c365" class="bulleted-list"><li style="list-style-type:disc">Management and Organization: Does the presentation seem well organized and prepared beforehand? Are the slides and visual aid carefully prepared and selected so that they reflect the amount of thought put into the project? This is especially important if you are representing your project as a team. Moreover, do the team members show coordination and a high organization level? Did they adhere to the allocated time limit? Insufficient organization can ruin what could otherwise be a perfect presentation for a strong, impactful project.</li></ul><ul id="6f97293a-8c27-416a-ac3c-aa149e07049e" class="bulleted-list"><li style="list-style-type:disc">Creativity and Visual Aid: Although there are no objective criteria for this, creativity in the presentation could be all that is missing to secure 1st place. By definition, there are no limitations to what you can do here. Try to think of ways to attract the evaluator. This includes:</li></ul><ul id="e4875d3b-5cd7-4569-b632-0e4aeaa06b37" class="bulleted-list"><li style="list-style-type:disc">Providing specific details and plans for applying the project in real life.</li></ul><ul id="f0bf5ed9-5be8-4f40-85f7-a9e688f55612" class="bulleted-list"><li style="list-style-type:disc">Giving the evaluator a schematic, accurate diagram of the project structure and mechanism (It is preferred that you make the diagram on a computer and then print it).</li></ul><ul id="aa42e271-488d-4777-aaf8-62c50a76c80d" class="bulleted-list"><li style="list-style-type:disc">Operating the project in front of the evaluator (if possible). You could even give them samples of the products if they exist.</li></ul><ul id="9d5f8bf4-0e1f-48a2-98d5-6df375314aed" class="bulleted-list"><li style="list-style-type:disc">Aesthetically appealing project design: maintaining the shape of your project organized and improving its appearance can significantly help the evaluator understand its mechanism and helps leave a positive first and lasting impression.</li></ul><ul id="cb1cbd02-0ae9-4988-b19e-2c8ba00dc36c" class="bulleted-list"><li style="list-style-type:disc">Designing a mobile application or website to showcase your project. You could even connect them with your project and have data uploaded there. IoT opens up many opportunities.</li></ul><ul id="f8d7448c-17dd-4244-97de-430e548c5f9b" class="bulleted-list"><li style="list-style-type:disc">Effective (but importantly short) video summary of your project.</li></ul><ul id="40cfc755-08a7-44fb-809b-d5d069bade99" class="bulleted-list"><li style="list-style-type:disc">Preliminary partnerships with other companies and organizations, which proves that your project successfully attracted the attention of others and convinced them of its benefits.</li></ul><p id="e9ca23f0-fbb2-4974-91ae-0d1f6798a9fd" class="">Finally, remember to stay relaxed while presenting. It is okay if you miss something you planned to say or if you lag a little behind. Keep going and maintain your charming and reassuring smile throughout the presentation. Ensure that you thank the evaluator when appropriate and show them you care about their comments and feedback. Moreover, different evaluators focus on different qualities although it is always beneficial to maintain all the previously mentioned qualities. Hence, if you sense that an evaluator may be especially pleased by some specific characteristic, try your best to show it to him. Believe in yourself and practice well, and you will ace that presentation!</p><hr id="2ad7c13f-fb0a-4be7-8315-46a0397d6ff3"/><p id="3437fafe-7794-44d7-9da6-0b6797fdaed3" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cb0e71cb-cc3a-4949-b6e5-86cb0d217f06"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Presenting your project in the final stage in front of professors can be nerve-racking. However, remember the key purpose of your project presentation: Communicating your results to a fellow researcher. Hence, in order to succeed, you must present your project effectively and concisely, while focusing on main points and takeaways. Be always specific as possible, since being generic will not distinguish you from the crowd, but do not get too involved in the details and distract your listener from your main points. Use your allocated time wisely. Be sure to present your content with academic language, accurate terminology, effective visual aid, and with a confident smile!</div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
